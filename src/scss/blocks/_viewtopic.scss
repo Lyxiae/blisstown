@@ -1,0 +1,632 @@
+.viewtopic {
+  $block-selector: &;
+
+  &__container {
+    @extend %main-container;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    @include breakpoint(600px) {
+      flex-direction: row;
+    }
+  }
+
+  &__head-buttons {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  &__topic-title-block {
+    background: black;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 6px 6px 0 0;
+  }
+
+  &__topic-title {
+    text-align: center;
+    margin-bottom: 0;
+    -webkit-text-stroke: 1px $color-secondary;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+    @include breakpoint(1100px) {
+      font-size: 40px;
+    }
+  }
+
+  &__post-head {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+    justify-content: space-between;
+
+    @include breakpoint(768px) {
+      padding-left: 320px;
+    }
+
+    .post-townies & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .post-hellhounds & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .post-cercle & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .post-llorona & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .post-jupiter & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .post-exiles & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+  }
+
+  &__name-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__name {
+    font-size: 28px;
+    padding: 2px 15px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.75);
+
+    @include breakpoint(1100px) {
+      font-size: 36px;
+      text-transform: uppercase;
+    }
+
+    b,
+    strong {
+      font-weight: 600 !important;
+    }
+  }
+
+  &__sub-name {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+
+    .topic-profile-field,
+    #{$block-selector}__rank-text {
+      color: white;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      &-messages {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 0.25rem;
+      }
+    }
+  }
+
+  &__head-icon-container {
+    position: relative;
+    display: none;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 50%;
+
+    @include breakpoint(768px) {
+      display: flex;
+    }
+
+    .topic-profile-field__label {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      width: 330px;
+      height: 330px;
+      outline: 10px solid rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translate(50%, -50%);
+      border-radius: 50%;
+    }
+    .post-townies & {
+      &::before {
+        background-image: $gradient-townies;
+        border-radius: 50%;
+      }
+    }
+    .post-hellhounds & {
+      &::before {
+        background: $gradient-hellhounds;
+      }
+    }
+    .post-cercle & {
+      &::before {
+        background: $gradient-cercle;
+      }
+    }
+    .post-llorona & {
+      &::before {
+        background: $gradient-llorona;
+      }
+    }
+    .post-jupiter & {
+      &::before {
+        background: $gradient-jupiter;
+      }
+    }
+    .post-exiles & {
+      &::before {
+        background: $gradient-exiles;
+      }
+    }
+
+    img {
+      position: relative;
+      z-index: 2;
+      border: 5px solid rgba(0, 0, 0, 0.5);
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__post-main {
+    background: rgba(0, 0, 0, 0.35);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px auto 60px auto;
+    @include breakpoint(768px) {
+      grid-template-columns: 320px 1fr 60px;
+      grid-template-rows: unset;
+    }
+  }
+
+  &__messages-container {
+    padding-left: 1rem;
+
+    @include breakpoint(900px) {
+      padding-left: 0;
+    }
+  }
+
+  &__main-bar {
+    grid-column: span 3;
+    background-color: $color-black;
+    background-image: url("../../assets/dots-motif.jpg");
+    background-repeat: repeat;
+    background-size: 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 70px;
+    min-height: 40px;
+    gap: 1rem;
+
+    .topic-profile-field {
+      height: 100%;
+      display: none;
+      align-items: flex-end;
+      border-bottom: 3px solid;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include breakpoint(600px) {
+        display: flex;
+      }
+
+      .post-townies & {
+        color: $color-townies;
+      }
+
+      .post-hellhounds & {
+        color: $color-hellhounds;
+      }
+      .post-cercle & {
+        color: $color-cercle;
+      }
+      .post-llorona & {
+        color: $color-llorona;
+      }
+      .post-jupiter & {
+        color: $color-jupiter;
+      }
+      .post-exiles & {
+        color: $color-exiles;
+      }
+
+      &__label {
+        display: none;
+      }
+
+      &__content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-top: 3px;
+        font-size: 11px;
+        @include breakpoint(768px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__left-column {
+    grid-column: span 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 35px;
+    position: relative;
+    grid-row: 2 / 3;
+    @include breakpoint(768px) {
+      max-width: 320px;
+      margin-top: -155px;
+      grid-column: span 1;
+      height: calc(100% + 155px);
+    }
+  }
+
+  &__sticky-container {
+    @include breakpoint(768px) {
+      position: sticky;
+      top: 60px;
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__avatar-container {
+    outline: 5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    width: 250px;
+    margin: 1rem auto 0;
+    @include breakpoint(768px) {
+      margin: 0 auto;
+    }
+
+    &:hover {
+      .viewtopic__bio-container {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    img {
+      width: 250px;
+      height: 350px;
+      object-fit: cover;
+    }
+  }
+
+  &__bio-container {
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(3px);
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 15px;
+    max-height: 350px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: 0.3s;
+    width: 220px;
+
+    .topic-profile-field {
+      &__label {
+        display: none;
+      }
+
+      &__content {
+        height: 250px;
+        overflow: auto;
+        margin: 0.5rem 0.5rem;
+        padding: 0 0.5rem;
+        font-size: 12px;
+        text-align: justify;
+        line-height: 1.6;
+        color: white;
+      }
+
+      &::before {
+        content: "Qui suis-je ?";
+        background: black;
+        border-radius: 6px 6px 0 0;
+        text-transform: uppercase;
+        font-size: 24px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        @include colorAsPostGroupClass();
+      }
+    }
+  }
+
+  &__contact-fields {
+    width: 80%;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: -20px auto 0;
+    position: relative;
+  }
+
+  &__contact-field {
+    width: 40px;
+    height: 40px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: black;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      border: 1px solid;
+      font-size: 24px;
+
+      @include colorAsPostGroupClass();
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__main-column {
+    padding: 2rem 2rem 2rem 0;
+  }
+
+  &__post-infos {
+    font-size: 12px;
+    color: #ddd;
+    margin-bottom: 0.5rem;
+
+    a {
+      color: white;
+      font-weight: 600;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__post-body {
+    background-color: black;
+    border-radius: 6px;
+    padding: 3rem;
+    font-size: 15px;
+    line-height: 1.65;
+    font-family: $font-sans;
+    color: #ddd;
+    margin-bottom: 1rem;
+    min-height: 350px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__signature {
+    background-color: black;
+    border-radius: 6px;
+    padding: 3rem;
+    font-size: 15px;
+    font-family: $font-sans;
+    color: #ddd;
+
+    br:nth-of-type(1), br:nth-of-type(2) {
+      display: none;
+    }
+  }
+
+  &__right-column {
+    background: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    grid-column: span 3;
+    grid-row: 3 / 4;
+    order: 2;
+    @include breakpoint(768px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: -40px;
+      grid-column: span 1;
+      grid-row: unset;
+      order: unset;
+    }
+  }
+
+  &__post-tools {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    @include breakpoint(768px) {
+      position: sticky;
+      top: 100px;
+      flex-direction: column;
+      height: auto;
+    }
+    a {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+  }
+
+  &__nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__bottom-pagination {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    a {
+      color: $color-primary;
+      font-weight: 600;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .pag-img {
+      filter: invert(1);
+    }
+  }
+
+  &__quick-answer {
+    min-height: 360px;
+    width: 100%;
+    background-image: url("../../assets/viewtopic/quick-answer.jpg");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    justify-content: flex-end;
+    padding: 2rem;
+    margin-top: 1rem;
+    display: none;
+    @include breakpoint(768px) {
+      display: flex;
+    }
+
+    .h3 {
+      display: none;
+    }
+
+    #quick_reply {
+      flex-grow: 1;
+      max-width: 700px;
+      #textarea_content {
+        width: 100% !important;
+      }
+
+      .sceditor-container {
+        min-height: 220px;
+      }
+    }
+  }
+
+  &__mod-tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+
+    .quickmod {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.topic-profile-field-citation {
+  @include colorAsPostGroupClass();
+  $this: ".topic-profile-field";
+  margin: 1rem 0;
+  background: black;
+  border-radius: 6px;
+  position: relative;
+  min-height: 110px;
+
+  &::before {
+    @extend %icon;
+    content: "u";
+
+    font-size: 32px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  #{$this}__label {
+    display: none;
+  }
+
+  #{$this}__content {
+    width: 100%;
+    font-size: 12px;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+
+    @include breakpoint(768px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.topic-profile-field-disponibilite {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  .topic-profile-field {
+    &__label {
+      display: none;
+    }
+  }
+}
+
+form[name="go_page"] {
+  background-color: black;
+  padding: 1rem;
+  font-weight: 500 !important;
+
+  td.row1 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.profile-icons a[href=""],
+.profile-icons a[onclick=""],
+.profile-icons span[href=""],
+.profile-icons span[onclick=""] {
+  display: none;
+}

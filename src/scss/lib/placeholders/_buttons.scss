@@ -1,0 +1,22 @@
+%button {
+    border: 1px solid;
+    font-family: $font-sans-title;
+    text-transform: uppercase;
+    height: 34px;
+    padding: 0 20px;
+    font-size: 14px;
+    color: inherit;
+    font-weight: 700;
+    text-align: center;
+    background-color: $color-holly-black;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    transition: filter 0.3s;
+    @include hover-focus-within() {
+        filter: brightness(1.2);
+    }
+}

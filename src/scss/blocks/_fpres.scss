@@ -1,0 +1,253 @@
+.f-pres {
+  br {
+    display: none;
+  }
+
+  &__fields-wrapper {
+    padding: 1rem;
+  }
+  &__physical {
+    background: url("../../assets/fpres/bg-physique.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem 1rem 1rem;
+    position: relative;
+    gap: 0.45rem;
+
+    @include breakpoint($breakpoint-s) {
+      height: calc(100% + 1.75rem);
+      
+      margin-top: -1.75rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      @include bgColorAsGroupClass();
+      mix-blend-mode: overlay;
+    }
+  }
+
+  &__physical-icon {
+    font-size: 120px;
+    @include colorAsGroupClass();
+    position: absolute;
+    top: 1rem;
+    left: 0;
+  }
+
+  &__char-section {
+    @include borderColorAsGroupClass();
+    border-top: 4px solid;
+    border-radius: 6px;
+    background-color: #060606;
+    position: relative;
+
+    .f-carnet > & {
+      @include bgPrezGradientAsGroupClass();
+      padding-right: 120px;
+      &::before {
+        margin-top: 0;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 100%;
+      background-image: url("../../assets/fpres/bg-lisere.jpg");
+      background-repeat: repeat-y;
+      background-position: right top;
+      margin-top: 130px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 100%;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 100%;
+      @include bgColorAsGroupClass();
+      mix-blend-mode: overlay;
+      margin-top: 130px;
+    }
+  }
+
+  &__char-section {
+    overflow: hidden;
+  }
+
+  &__qualificatives {
+    position: relative;
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 130px;
+    justify-content: center;
+    gap: 10px;
+    background: #000000;
+    font-family: $font-sans-title;
+
+    &::before {
+      content: "Who am I";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      font-size: 150px;
+      color: black;
+      font-style: italic;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+      line-height: 0.85;
+      white-space: nowrap;
+      @include bgPrezGradientAsGroupClass();
+      background-size: 100% 200% !important;
+    }
+  }
+
+  &__adj {
+    font-size: 13px;
+    font-weight: 600;
+    border: 2px solid;
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-family: $font-sans-title;
+    text-transform: uppercase;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    &--positive {
+      color: $color-llorona;
+    }
+
+    &--negative {
+      color: $color-hellhounds;
+    }
+  }
+
+  &__fields-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint(1024px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px 1rem;
+    }
+  }
+
+  &__jauges {
+    border-radius: 6px;
+    padding: 1rem;
+    background-color: black;
+    background-image: url("../../assets/fpres/bg-jauges.jpg");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    justify-content: center;
+    font-family: $font-sans-title;
+  }
+
+  &__jauge-labels {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  &__jauge-container {
+    border-radius: 6px;
+    background-color: black;
+    width: 100%;
+  }
+
+  &__jauge {
+    @include bgGradientAsGroupClass();
+    height: 18px;
+    border-radius: 6px;
+  }
+
+  &__text {
+    br {
+      display: initial;
+    }
+  }
+
+  &__add-section {
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+
+  &__add-title-block {
+    background-color: $color-black;
+    background-image: url("../../assets/dots-motif.jpg");
+    background-repeat: repeat;
+    background-size: 20px 20px;
+    border-bottom: 1px solid;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 1rem;
+
+    @include colorAsGroupClass();
+    @include breakpoint(768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__add-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    @include breakpoint(768px) {
+      font-size: 30px;
+    }
+  }
+
+  &__add-title-info {
+    font-size: 22px;
+  }
+
+  &__add-text {
+    background-color: #060606;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 1rem;
+    @include bgPrezGradientAsGroupClass();
+    br {
+      display: initial;
+    }
+  }
+
+  &__icon-section-text {
+    text-align: right;
+  }
+}

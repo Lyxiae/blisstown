@@ -1,0 +1,7 @@
+.privmsg-read {
+  $block-selector: &;
+
+  &__container {
+    @extend %main-container;
+  }
+}

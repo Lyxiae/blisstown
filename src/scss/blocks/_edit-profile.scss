@@ -1,0 +1,151 @@
+.edit-profile {
+  $block-selector: &;
+
+  &__container {
+    @extend %main-container;
+
+    
+  }
+
+  .title {
+    margin-bottom: 0;
+  }
+
+  
+
+  .input-group {
+    margin-bottom: 1rem;
+
+    &--flex {
+      display: flex;
+      gap: 1rem;
+
+      .input__label {
+        display: flex;
+        color: white !important;
+        font-weight: normal;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .input-container {
+    .input__label {
+      font-weight: normal; 
+      color: white !important;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      li label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
+    textarea {
+      padding: 1rem;
+      font-family: $font-sans;
+      font-size: 14px;
+      line-height: 1.4;
+      flex-grow: 1;
+      flex-shrink: 0;
+      @include breakpoint(1024px) {
+        max-width: 50%;
+      }
+    }
+  }
+
+  .input__label {
+    color: $color-primary !important;
+    font-weight: 600;
+    span {
+      color: $color-primary !important;
+      font-weight: 600;
+    }
+  }
+
+  .italic {
+    font-style: italic;
+    font-size: 12px;
+    color: #ccc;
+  }
+
+  &__avatar-section {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    background: black;
+    border-radius: 6px;
+    @include breakpoint(768px) {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+    }
+  }
+  &__upload-avatar {
+    padding: 0 2rem;
+    input {
+      width: 100%;
+    }
+
+    label {
+      text-transform: uppercase;
+      font-size: 14px;
+      color: $color-primary;
+      font-weight: 600;
+    }
+  }
+
+  &__current-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 250px;
+      height: 350px;
+      object-fit: cover;
+      outline: 10px solid transparentize(white, 0.95);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    
+  }
+
+  &__delete {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__submit-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  input[type=file] {
+    background-color: transparent;
+    border: none;
+    margin: 0.5rem 0;
+  }
+}
+
+.ucp-main {
+  max-width: 1300px;
+}

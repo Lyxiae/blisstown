@@ -1,0 +1,32 @@
+.post-review {
+  $block-selector: &;
+
+  margin-bottom: 1rem;
+  &__list {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &__row {
+    padding: 1rem;
+    background-color: black;
+    border-left: 2px solid $color-primary;
+    font-size: 13px;
+    &:nth-of-type(even) {
+      background-color: #060b0c;
+      border-color: $color-secondary;
+    }
+  }
+
+  &__subject-title {
+    display: block;
+    margin: 0;
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &__author {
+    text-transform: uppercase;
+  }
+}

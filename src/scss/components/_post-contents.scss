@@ -1,0 +1,145 @@
+blockquote {
+  background-color: rgba(255, 255, 255, 0.075);
+  border-left: 4px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 6px 6px 0;
+  padding: 1.25rem;
+  margin: 0;
+
+  cite {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+}
+
+.spoiler_title {
+  color: $color-primary;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.spoiler_content {
+  padding: 1rem;
+}
+
+.codebox.spoiler {
+  dd {
+    background-color: rgba(255, 255, 255, 0.075);
+    margin: 0;
+  }
+}
+
+.codebox.hidecode {
+  background-color: transparentize($color-primary, 0.9);
+
+  dd {
+    margin: 0;
+    padding: 1.25rem;
+  }
+}
+
+.codebox {
+  dt {
+    font-family: $font-sans-title;
+  }
+
+  dd {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0;
+    padding: 1rem;
+  }
+}
+
+.post-title {
+  position: relative;
+  width: 100%;
+  span {
+    display: flex;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 2px solid $color-primary;
+    background: black;
+    position: relative;
+    margin-left: 10px;
+    width: fit-content;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: $font-sans-title;
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    background-color: $color-primary;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  &--secondary {
+    font-size: 14px;
+    font-family: $font-sans-title;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $color-secondary;
+    padding: 5px 0;
+    position: relative;
+    width: fit-content;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-bottom: 2px solid $color-secondary;
+      width: 100%;
+    }
+  }
+}
+
+.selectCode {
+  font-weight: 600;
+  font-family: $font-sans-title;
+  font-size: 12px;
+  color: $color-primary;
+  &:hover {
+    color: white;
+  }
+}
+
+.dice-block {
+  border-radius: 6px;
+  border: 2px solid $color-primary;
+  background-color: $color-black;
+  background-image: url("../../assets/dots-motif.jpg");
+  background-repeat: repeat;
+  background-size: 20px 20px;
+  position: relative;
+  padding: 2.5rem;
+
+  &__title {
+    display: flex;
+    padding: 1px 8px;
+    border-radius: 6px;
+    border: 2px solid $color-primary;
+    background: black;
+    margin-left: 10px;
+    width: fit-content;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: $font-sans-title;
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    transform: translateY(-50%);
+  }
+
+  &__text {
+    background: $color-black;
+    padding: 1rem;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.4;
+  }
+}

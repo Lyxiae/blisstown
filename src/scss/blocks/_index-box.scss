@@ -1,0 +1,1343 @@
+$forum-content-size: 435px;
+.category {
+  $block-selector: &;
+
+  &__container {
+    overflow: hidden;
+    #c1 &,
+    #c2 &,
+    #f25 &,
+    #f23 & {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: calc(100% - 250px);
+        bottom: 0;
+        left: 0;
+        background-color: $color-black;
+        background-image: url("../../assets/dots-motif.jpg");
+        background-repeat: repeat;
+        background-size: 20px 20px;
+
+        @include breakpoint(1100px) {
+          height: 440px;
+        }
+      }
+    }
+
+    #f25 &, #f23 & {
+      &::before {
+        height: 100%;
+      }
+    }
+
+    #c1 & {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: calc(100% - 300px);
+        bottom: 0;
+        left: 0;
+        background-color: $color-black;
+        background-image: url("../../assets/dots-motif.jpg");
+        background-repeat: repeat;
+        background-size: 20px 20px;
+
+        @include breakpoint(1100px) {
+          height: 530px;
+        }
+      }
+    }
+
+    #c3 & {
+      background-color: $color-black;
+      background-image: url("../../assets/dots-motif.jpg");
+      background-repeat: repeat;
+      background-size: 20px 20px;
+    }
+  }
+  &__title-container {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    z-index: 10;
+    &::before {
+      content: "Meet the worst";
+      width: 100%;
+      height: 100%;
+      font-family: $font-brush;
+      overflow: hidden;
+      font-size: 110px;
+      text-align: center;
+      color: $color-black;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 0);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #c1 & {
+      &::before {
+        content: "Welcome home";
+      }
+    }
+
+    #c2 &,
+    #f25 &,
+    #f23 & {
+      &::before {
+        content: "No game here";
+      }
+    }
+
+    #c3 & {
+      display: none;
+    }
+  }
+  &__title {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-family: $font-brush;
+    font-size: 20px;
+    letter-spacing: 5px;
+    -webkit-text-stroke: 2px $color-secondary;
+    color: black;
+    text-align: center;
+    pointer-events: none;
+
+    @include breakpoint(900px) {
+      font-size: 40px;
+    }
+
+    @include breakpoint($breakpoint-xl) {
+      font-size: 50px;
+    }
+    h2 {
+      font-weight: normal;
+      margin-bottom: 0;
+    }
+  }
+
+  &__forumslist {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include breakpoint(1100px) {
+      gap: 0;
+    }
+    #c2 &,
+    #f25 & {
+      @extend %main-container;
+      position: relative;
+      display: grid;
+      grid-gap: 2rem;
+
+      @include breakpoint(768px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include breakpoint(1100px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    #f23 & {
+      @extend %main-container;
+      position: relative;
+      display: grid;
+      grid-gap: 2rem;
+
+      @include breakpoint(768px) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    #c1 & {
+      @extend %main-container;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      position: relative;
+      gap: 0;
+      padding-right: 1rem;
+      @include breakpoint(1100px) {
+        max-height: 530px;
+        padding-right: 50px;
+      }
+
+      &::before {
+        content: "";
+        background-image: url("../../assets/vectoradmin.svg");
+        background-position: top right;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        display: none;
+        @include breakpoint(1100px) {
+          display: block;
+        }
+      }
+    }
+
+    #c3 & {
+      @extend %main-container;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      @include breakpoint(1100px) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+.forum {
+  $block-selector: &;
+  width: 100%;
+  background-color: $color-black;
+  background-image: url("../../assets/dots-motif.jpg");
+  background-repeat: repeat;
+  background-size: 20px 20px;
+  position: relative;
+  overflow: hidden;
+
+  .color-groups {
+    font-weight: 500 !important;
+  }
+
+  @include breakpoint(900px) {
+    height: 440px;
+  }
+
+  &:nth-of-type(even) {
+    #{$block-selector}__img {
+      left: 0;
+      right: unset;
+    }
+
+    #{$block-selector}__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @include breakpoint(900px) {
+        align-items: flex-end;
+      }
+    }
+
+    #{$block-selector}__content-container {
+      @include breakpoint(900px) {
+        padding-right: 0;
+        padding-left: 1rem;
+      }
+    }
+
+    #{$block-selector}__title {
+      @include breakpoint(900px) {
+        text-align: right;
+        justify-content: flex-end;
+        padding-right: 10px;
+        padding-left: 25px;
+      }
+    }
+    #{$block-selector}__main-infos {
+      right: unset;
+      left: -340px;
+    }
+    #{$block-selector}__stats {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      left: unset;
+      right: 50px;
+    }
+    #{$block-selector}__lastp {
+      flex-direction: row-reverse;
+
+      &-infos {
+        left: unset;
+        right: -60px;
+
+        &::before {
+          right: unset;
+          left: 10px;
+        }
+      }
+      
+    }
+    #{$block-selector}__subforums {
+      padding-right: 1rem;
+    }
+  }
+
+  #c1 & {
+    height: auto;
+    background: none;
+    width: 100%;
+    @include breakpoint(1100px) {
+      width: 50%;
+    }
+  }
+
+  #f25 &,
+  #f23 & {
+    background: none;
+  }
+
+  #f23 & {
+    height: 350px;
+  }
+
+  &#personnages {
+    background-image: url("../../assets/categories/bg-catoine.png");
+    background-size: cover;
+    height: auto;
+    padding-top: 2rem;
+    @include breakpoint(1100px) {
+      height: 675px;
+      padding-top: 0;
+    }
+  }
+
+  &#gestion {
+    position: relative;
+    height: auto;
+    @include breakpoint(1100px) {
+      height: 675px;
+    }
+
+    &::before {
+      content: "";
+      background-image: url("../../assets/vectorgestion.svg");
+      background-position: top left;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(50% + 1rem);
+      height: 100%;
+      display: none;
+      @include breakpoint(1100px) {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    background-image: url("../../assets/categories/bliss-heights.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: calc(100vw - 50px - $forum-content-size);
+    height: 100%;
+    right: 0;
+    top: 0;
+    display: none;
+    @include breakpoint(900px) {
+      display: block;
+    }
+
+    @include breakpoint(1400px) {
+      width: calc(
+        100vw - 50px - $forum-content-size -
+          calc(calc(100vw - $container-max-size) / 2)
+      );
+    }
+
+    #c1 &,
+    #c2 &,
+    #c3 &,
+    #f25 &,
+    #f23 & {
+      display: none;
+    }
+
+    #Megasquare & {
+      background-image: url("../../assets/categories/megasquare.jpg");
+    }
+    #Centre\ commercial & {
+      background-image: url("../../assets/categories/megasquare.jpg");
+    }
+    #Hyperion & {
+      background-image: url("../../assets/categories/megasquare.jpg");
+    }
+    #Starcadia & {
+      background-image: url("../../assets/categories/megasquare.jpg");
+    }
+    #Museum & {
+      background-image: url("../../assets/categories/musem.jpg");
+    }
+    #Unversité\ Minerva & {
+      background-image: url("../../assets/categories/universite-minerva.jpg");
+    }
+    #Providence\ Park & {
+      background-image: url("../../assets/categories/providence-park.jpg");
+    }
+    #Fiddler\'s\ Green & {
+      background-image: url("../../assets/categories/fiddlers-green.jpg");
+    }
+    #Hyperloop & {
+      background-image: url("../../assets/categories/hyperloop.jpg");
+    }
+    #Eleanor\'s\ Carcass & {
+      background-image: url("../../assets/categories/eleanors-carcass.jpg");
+    }
+    #Peter\'s\ Motors & {
+      background-image: url("../../assets/categories/peters-motors.jpg");
+    }
+    #Le\  & {
+      background-image: url("../../assets/categories/on-the-run.jpg");
+    }
+    #Boulder\ Town & {
+      background-image: url("../../assets/categories/boulder-town.jpg");
+    }
+    #Walmart & {
+      background-image: url("../../assets/categories/walmart.jpg");
+    }
+    #Siliconica & {
+      background-image: url("../../assets/categories/siliconica.jpg");
+    }
+    #Mimi\'s & {
+      background-image: url("../../assets/categories/mimis.jpg");
+    }
+    #Peach & {
+      background-image: url("../../assets/categories/peach.jpg");
+    }
+    #Whiskers\ Tea & {
+      background-image: url("../../assets/categories/whiskers-tea.jpg");
+    }
+    #Profondeurs & {
+      background-image: url("../../assets/categories/profondeurs.jpg");
+    }
+    #Campement\ Intermédiaire & {
+      background-image: url("../../assets/categories/campement-inter.jpg");
+    }
+    #Stone\ Belt & {
+      background-image: url("../../assets/categories/stone-belt.jpg");
+    }
+    #Décharge & {
+      background-image: url("../../assets/categories/decharge.jpg");
+    }
+    #Village\ exilé & {
+      background-image: url("../../assets/categories/village-exile.jpg");
+    }
+    #Nevada\'s\ Hell & {
+      background-image: url("../../assets/categories/nevadas-hell.jpg");
+    }
+    #Le\ Ranch & {
+      background-image: url("../../assets/categories/ranch.jpg");
+    }
+  }
+
+  &__content {
+    @extend %main-container;
+    padding: 1rem;
+    height: 100%;
+
+    @include breakpoint($breakpoint-m) {
+      padding: 1rem 50px;
+    }
+
+    #c1 & {
+      align-items: flex-start;
+    }
+
+    #c1 &,
+    #c2 &,
+    #f25 &,
+    #f23 & {
+      align-items: flex-start;
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #personnages & {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+    }
+
+    #gestion & {
+      padding-right: 0;
+      padding-top: 3rem;
+    }
+  }
+
+  &__content-container {
+    width: 100%;
+    position: relative;
+
+    @include breakpoint(900px) {
+      width: $forum-content-size;
+      padding-right: 1rem;
+    }
+
+    #c2 &,
+    #c1 &,
+    #f25 &,
+    #f23 & {
+      width: 100%;
+    }
+
+    #c1 & {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-right: 1rem;
+      padding-left: 0;
+    }
+
+    #c3 & {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      position: relative;
+    }
+
+    #personnages & {
+      @include breakpoint(1100px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+    }
+
+    #gestion & {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    height: 175px;
+    width: 100%;
+    text-align: left;
+    font-size: 34px;
+    font-weight: 700;
+    color: $color-primary;
+    display: flex;
+    align-items: flex-end;
+    line-height: 1;
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    @include breakpoint(900px) {
+      padding-right: 25px;
+      font-size: 46px;
+      margin-bottom: 5px;
+    }
+
+    @include breakpoint(1200px) {
+      padding-right: 25px;
+      font-size: 56px;
+    }
+
+    &--secondary {
+      color: $color-secondary;
+    }
+
+    #c2 &,
+    #c1 &,
+    #f25 &,
+    #f23 & {
+      text-align: left !important;
+      white-space: nowrap;
+      color: $color-primary;
+      padding: 0;
+      justify-content: flex-start;
+      height: auto;
+      background-color: $color-black;
+      padding: 10px 16px;
+      border-radius: 6px 6px 0 0;
+      border-bottom: 2px solid $color-primary;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      text-transform: capitalize;
+      .forum[data-type="Nouveaux messages"] & {
+        color: $color-secondary !important;
+        border-color: $color-secondary !important;
+      }
+    }
+
+    #f23 & {
+      font-size: 30px;
+      @include breakpoint($breakpoint-m) {
+        font-size: 36px;
+      }
+      @include breakpoint($breakpoint-xl) {
+        font-size: 48px;
+      }
+    }
+    #c3 & {
+      text-transform: capitalize;
+      height: auto;
+      color: $color-primary;
+      line-height: 0.8;
+      position: relative;
+      z-index: 2;
+      .forum[data-type="Nouveaux messages"] & {
+        color: $color-secondary !important;
+        border-color: $color-secondary !important;
+      }
+    }
+
+    #personnages & {
+      padding-left: 1rem;
+    }
+    #gestion & {
+      color: $color-secondary;
+      border-color: $color-secondary;
+    }
+
+    .forum[data-type="Nouveaux messages"] & {
+      color: $color-secondary !important;
+      border-color: $color-secondary !important;
+    }
+  }
+
+  &__description {
+    height: auto;
+    width: 100%;
+    overflow: auto;
+    font-size: 14px;
+    color: $color-white;
+    line-height: 1.5;
+    text-align: justify;
+    padding-right: 1rem;
+    @include breakpoint(900px) {
+      height: 190px;
+      margin-bottom: 5px;
+    }
+
+    #c2 &,
+    #f25 &,
+    #f23 & {
+      background: transparent;
+      height: unset;
+      width: unset;
+      padding: 0;
+      @include breakpoint(768px) {
+        height: 70px;
+      }
+    }
+    #c1 & {
+      display: none;
+    }
+
+    #personnages & {
+      background: transparent;
+      width: 100%;
+      padding: 0;
+      position: relative;
+      height: auto;
+
+      @include breakpoint(1100px) {
+        height: 380px;
+      }
+    }
+
+    #gestion & {
+      background: transparent;
+      width: 100%;
+      padding: 0;
+      position: relative;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+
+      @include breakpoint(1100px) {
+        flex-grow: 1;
+        align-self: stretch;
+      }
+    }
+  }
+
+  &__subdescription {
+    background-color: rgba(0,0,0,0.75);
+    backdrop-filter: blur(3px);
+    padding: 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    width: 100%;
+
+    #personnages & {
+      padding-left: 1rem;
+    }
+  }
+
+  &__description-links {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__main-infos {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(600px) {
+      flex-direction: row;
+    }
+    @include breakpoint(900px) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -340px;
+    }
+
+    #c1 & {
+      display: flex;
+      flex-direction: column;
+      position: static;
+      align-items: flex-start;
+      gap: 1rem;
+
+      @include breakpoint(768px) {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    #c2 &,
+    #f25 &,
+    #f23 & {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #personnages & {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      width: 100%;
+      bottom: 150px;
+      right: 0;
+      top: unset;
+      padding-right: 1rem;
+      left: unset;
+      height: fit-content;
+      position: static;
+
+      @include breakpoint(1100px) {
+        position: absolute;
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+    }
+
+    #gestion & {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0;
+      height: fit-content;
+      position: static;
+      width: 100%;
+
+      @include breakpoint(1100px) {
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+    }
+  }
+
+  &__subforums {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    justify-content: flex-start;
+    font-size: 0;
+
+    .gensmall {
+      display: inline-flex;
+      padding: 0.5rem 0.75rem;
+      border: 2px solid $color-primary;
+      color: $color-white;
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      background-color: $color-black;
+
+      @include breakpoint(768px) {
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-black;
+      }
+    }
+    #c1 & {
+      margin-top: 10px;
+    }
+    #c3 & {
+      display: none;
+    }
+  }
+
+  &__lastp {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    #c1 &,
+    #c2 &,
+    #f25 &,
+    #f23 & {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      width: 100%;
+      margin-right: -50px;
+    }
+
+    #personnages &,
+    #gestion & {
+      flex-direction: row-reverse;
+      margin: 10px;
+      width: 100%;
+
+      @include breakpoint(1100px) {
+        margin: 0;
+      }
+    }
+
+    &-icon {
+      width: 110px;
+      max-width: 110px;
+      height: 110px;
+      max-height: 110px;
+      border-radius: 50%;
+      border: 5px solid black;
+      position: relative;
+      z-index: 3;
+      display: none;
+      img {
+        border: 2px solid $color-primary;
+        border-radius: 50%;
+        width: 100px;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+        .forum[data-type="Nouveaux messages"] & {
+          border-color: $color-secondary;
+        }
+      }
+
+      @include breakpoint(900px) {
+        display: block;
+      }
+    }
+
+    &-infos {
+      height: 85px;
+      border-radius: 100px;
+      padding: 0 50px;
+      width: 100%;
+      font-size: 11px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      background-color: rgba(0,0,0,0.75);
+      backdrop-filter: blur(3px);
+      text-transform: uppercase;
+      text-align: center;
+      &::before {
+        @extend %icon;
+        @extend %icon--chat-bubble;
+        font-size: 60px;
+        color: $color-secondary;
+        opacity: 0.25;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      p {
+        margin: 0;
+      }
+
+      @include breakpoint(900px) {
+        width: 285px;
+        left: -60px;
+        position: relative;
+      }
+
+      #c1 &,
+      #c2 &,
+      #f25 &,
+      #f23 & {
+        left: -50px;
+        right: 0;
+        padding: 0;
+
+        @include breakpoint(768px) {
+          padding: 0 50px;
+        }
+
+        &::before {
+          right: 10px;
+          left: unset;
+        }
+      }
+      #personnages &,
+      #gestion & {
+        width: 100%;
+
+        @include breakpoint(1100px) {
+          max-width: 285px;
+          right: -60px;
+          left: unset;
+          position: relative;
+        }
+
+        &::before {
+          left: 10px;
+          right: unset;
+        }
+      }
+    }
+
+    &-title {
+      text-transform: uppercase;
+      color: $color-primary;
+      .forum[data-type="Nouveaux messages"] & {
+        color: $color-secondary !important;
+        border-color: $color-secondary !important;
+      }
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__stats {
+    color: $color-secondary;
+    opacity: 0.5;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include breakpoint(900px) {
+      position: relative;
+      right: -50px;
+    }
+
+    #c1 &,
+    #c2 &,
+    #c3 &,
+    #f25 &,
+    #f23 & {
+      position: static;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 0 0;
+      flex-direction: row;
+    }
+
+    #c1 &,
+    #c2 &,
+    #f25 &,
+    #f23 & {
+      margin: 0 auto 10px;
+      @include breakpoint(1100px) {
+        margin: 0;
+      }
+    }
+
+    #c1 &,
+    #c3 & {
+      padding: 1rem;
+      background-color: black;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    #personnages & {
+      margin-left: 1rem;
+    }
+  }
+
+  &__stat {
+    font-style: italic;
+    line-height: 30px;
+    span {
+      font-size: 30px;
+    }
+
+    #c1 &,
+    #c3 & {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__welcome {
+    height: 530px;
+    width: 100%;
+    background-color: black;
+    background-image: url("../../assets/welcome_bg.jpg");
+    background-size: cover;
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: center;
+
+    @include breakpoint(1100px) {
+      width: 50%;
+    }
+
+    #c1 & .forum__title {
+      background-color: transparent;
+      border: none;
+      font-size: 48px;
+      padding: 0;
+      margin-bottom: 0;
+      white-space: break-spaces;
+    }
+
+    .forum__subdescription {
+      background: none;
+      margin-bottom: 0;
+      padding: 10px 0;
+    }
+  }
+
+  &__gestion-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    @include breakpoint(768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__category-btn {
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    background-color: black;
+    span {
+      position: relative;
+      font-size: 22px;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    &:hover {
+      #{$block-selector}__category-btn-img {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__category-btn-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0.65;
+  }
+}
+
+#c2,
+#f25,
+#f23 {
+  $block-selector: &;
+  position: relative;
+  overflow: hidden;
+  .forum {
+    $block-selector: &;
+    &__lastp {
+      &-infos {
+        &::before {
+          left: unset;
+          right: 10px;
+        }
+      }
+
+      &-icon {
+        flex-shrink: 0;
+        height: auto;
+      }
+    }
+    &__subforums {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.custom-category {
+  $block-selector: &;
+  width: 100%;
+  background-color: $color-black;
+  background-image: url("../../assets/dots-motif.jpg");
+  background-repeat: repeat;
+  background-size: 20px 20px;
+  margin-top: 1rem;
+  @include breakpoint($breakpoint-l) {
+    height: 675px;
+  }
+
+  &__container {
+    @extend %main-container;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include breakpoint($breakpoint-l) {
+      flex-direction: row;
+    }
+  }
+
+  &__left-block {
+    flex: 0.5;
+    background-color: $color-black;
+    background-image: url("../../assets/categories/bg-catoine.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+  }
+
+  &__right-block {
+    padding: 1.25rem 0 1.25rem 1.25rem;
+    flex: 0.5;
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include breakpoint($breakpoint-l) {
+      background-image: url("../../assets/categories/svg-wave.svg");
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    text-transform: unset;
+    line-height: 1;
+    margin-bottom: 0;
+
+    @include breakpoint($breakpoint-l) {
+      font-size: 62px;
+    }
+
+    
+  }
+
+  &__intro {
+    font-size: 12px;
+  }
+
+  &__buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .button {
+      line-height: 1;
+    }
+  }
+
+  &__cat-title {
+    background-color: black;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    color: $color-primary;
+    padding: 0.5rem 1rem;
+
+    @include breakpoint($breakpoint-l) {
+      text-align: right;
+      font-size: 48px;
+      line-height: 1;
+    }
+  }
+
+  &__cat-description {
+    background-color: transparentize(black, 0.25);
+    font-size: 13px;
+    padding: 0.65rem;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  &__accepted-block {
+    background-color: rgba(0,0,0,0.75);
+    backdrop-filter: blur(3px);
+    border-radius: 6px;
+    width: 100%;
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin-top: 2rem;
+    position: relative;
+    @include breakpoint(1100px) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin-top: 0;
+    }
+  }
+
+  &__accepted-title {
+    position: absolute;
+    background-color: black;
+    border-radius: 6px;
+    top: -15px;
+    left: 20px;
+    padding: 0.25rem 0.5rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $color-secondary;
+    font-weight: bold;
+  }
+
+  &__accepted-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.25rem;
+    @include breakpoint($breakpoint-xs) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($breakpoint-m) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__accepted-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+      #{$block-selector}__icon {
+        transform: scale(1.1) rotate(180deg);
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    bottom: -0.5rem;
+    font-size: 3.5rem;
+    transition: transform 0.3s;
+  }
+
+  &__accepted-name {
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: black;
+    border-radius: 6px;
+    padding: 8px 12px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__addendum {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0 0;
+    height: 100%;
+    flex-direction: column;
+    @include breakpoint($breakpoint-l) {
+      flex-direction: row;
+    }
+  }
+
+  &__rp-subforums {
+    flex: 0.55;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 0.5rem;
+  }
+
+  &__rp-subforum {
+    display: flex;
+    background: black;
+    border-radius: 6px;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__add-text {
+    flex: 0.45;
+    font-size: 12px;
+    text-align: justify;
+  }
+
+  &__button {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  &__button-fiche {
+    min-height: 32px;
+    margin-top: 10px;
+    margin-left: 1rem;
+  }
+}

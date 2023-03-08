@@ -1,0 +1,140 @@
+// # Icon classes
+//
+// Icon placeholder benefits:
+// - No extra markup nor CSS classes required
+// - Better separation of concerns: HTML for content, CSS for styles
+// - The computed CSS only contains icon selectors that you really use.
+//
+// When to use icon classes over icon placeholders?
+// See `_placeholders.scss`
+//
+// Usage:
+// ```html
+// <!-- A link prefixed with an icon -->
+// <a href="http://example.com" class="icon--example">Go to example.com</a>
+//
+// <!-- A standalone icon -->
+// <span class="icon--example" aria-hidden="true"></span>
+// ```
+//
+// Replacement RegEx when importing from `_placeholders.scss` (works with PhpStorm):
+// Regex: `(%(icon--[\w-]+))\s+\{\n\s+content:\s"\\[\d\w]+";`
+// Replacement: `.$2:::before {\n  @extend $1;`
+//
+// Pro tip: Please keep unused icon classes commented to keep the
+// CSS output as light as possible.
+
+//.icon--example::before {
+//  @extend &--example;
+//}
+
+.icon {
+  @extend %icon;
+
+  &--angle-down:before {
+    content: "\61";
+  }
+  &--angle-left:before {
+    content: "\62";
+  }
+  &--angle-right:before {
+    content: "\63";
+  }
+  &--angle-up:before {
+    content: "\64";
+  }
+  &--book:before {
+    content: "\65";
+  }
+  &--mail:before {
+    content: "\66";
+  }
+  &--twitter:before {
+    content: "\67";
+  }
+  &--round-chatbox:before {
+    content: "\68";
+  }
+  &--check:before {
+    content: "\69";
+  }
+  &--inbox:before {
+    content: "\6a";
+  }
+  &--cookie:before {
+    content: "\6b";
+  }
+  &--chat-bubble:before {
+    content: "\6c";
+  }
+  &--cross:before {
+    content: "\6d";
+  }
+  &--quote:before {
+    content: "\75";
+  }
+  &--camera-lens:before {
+    content: "\76";
+  }
+  &--userpin:before {
+    content: "\77";
+  }
+  &--pencil:before {
+    content: "\78";
+  }
+  &--wrench:before {
+    content: "\7a";
+  }
+  &--discord:before {
+    content: "\74";
+  }
+  &--home:before {
+    content: "\70";
+  }
+  &--chatbox:before {
+    content: "\73";
+  }
+  &--users:before {
+    content: "\72";
+  }
+  &--flame:before {
+    content: "\79";
+  }
+  &--network:before {
+    content: "\6e";
+  }
+  &--human:before {
+    content: "\6f";
+  }
+  &--login:before {
+    content: "\71";
+  }
+  &--logout:before {
+    content: "\41";
+  }
+  &--burger:before {
+    content: "\42";
+  }
+  &--bolt:before {
+    content: "\43";
+  }
+  &--eye:before {
+    content: "\44";
+  }
+  &--feather:before {
+    content: "\45";
+  }
+  &--questionmark:before {
+    content: "\46";
+  }
+  &--time:before {
+    content: "\47";
+  }
+  &--target:before {
+    content: "\48";
+  }
+  &--thumbs-up:before {
+    content: "\49";
+  }
+}
+

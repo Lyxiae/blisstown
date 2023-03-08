@@ -1,0 +1,13 @@
+%main-container {
+    max-width: 1400px;
+    padding: 0 16px;
+    margin: 0 auto;
+
+    @include breakpoint($breakpoint-m) {
+        padding: 0 50px;
+    }
+
+    &--rp {
+        padding: 30px 50px;
+    }
+}

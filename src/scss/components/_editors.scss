@@ -1,0 +1,368 @@
+// CE CODE A ETE UTILISE ET TESTE POUR MODERNBB. Je ne garantis pas qu'il sera fonctionnel pour d'autres versions de forums.
+
+// INSEREZ LES COULEURS QUE VOUS VOULEZ POUR VOTRE EDITEUR DANS LE GESTIONNAIRE DES COULEURS DU PANNEAU D'ADMINISTRATION.
+// EN PARTICULIER :
+// - Couleur de fond de l'éditeur (Barre de menu)
+// - Couleur de fond de l'éditeur (Zone de saisie de texte)
+// - Couleurs de fond 1, 2 et 3
+
+// DANS LE TEMPLATE OVERALL_HEADER
+// Avant la balise </head>, ajouter les deux lignes suivantes :
+
+//DANS LE CSS
+// Vous pouvez changer les couleurs à votre guise. Pour les boutons, il vous faudra changer les dégradés (linear-gradient). Vous pouvez en générer un ici : https://cssgradient.io/ ou simplement changer les couleurs.
+
+/*EDITEUR REPONSE*/
+.sceditor-container {
+  background: black !important;
+  border: none !important;
+}
+div.sceditor-toolbar {
+  background-color: #05090a !important;
+  border-color: black;
+  border-bottom: 1px solid transparentize($color-primary, 0.5) !important;
+  padding: 0.75rem 0.5rem !important;
+  border-radius: 6px 6px 0px 0px;
+}
+#cp-main .panel.sig {
+  background-color: #060606;
+}
+
+.sceditor-button div {
+  background-image: none;
+}
+
+.sceditor-group {
+  background: black !important;
+  border: 1px solid $color-mine-shaft !important;
+  padding: 0.25rem !important;
+  display: inline-flex;
+  gap: 0.15rem;
+
+  .sceditor-button-twemojifa div {
+    background-repeat: no-repeat !important;
+  }
+}
+
+.sceditor-button,
+.sceditor-button div,
+.sceditor-button.hover {
+  text-indent: 0;
+  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 20px;
+  width: auto !important;
+  min-width: 20px !important;
+  font-size: 0;
+  margin: 0 !important;
+
+
+  &:hover {
+    background-color: transparent !important;
+    filter: brightness(1.2);
+  }
+}
+
+.sceditor-button.hover {
+  background-color: transparent !important;
+}
+
+
+
+.sceditor-container iframe,
+.sceditor-container textarea {
+  color: #ccc !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  min-height: 200px;
+}
+
+.sceditor-button.sceditor-button-bold div,
+.sceditor-button.sceditor-button-italic div,
+.sceditor-button.sceditor-button-underline div,
+.sceditor-button.sceditor-button-strike div,
+.sceditor-button.sceditor-button-left div,
+.sceditor-button.sceditor-button-right div,
+.sceditor-button.sceditor-button-center div,
+.sceditor-button.sceditor-button-justify div {
+  background-image: none;
+}
+
+.sceditor-button.sceditor-button-bold div::before {
+  content: "B";
+  font-size: 18px;
+  position: absolute;
+  text-indent: 0;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  line-height: 16px;
+  font-weight: 900;
+  font-family: "Arial", sans-serif;
+  color: transparent;
+  background: $gradient-primary-horizontal;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.sceditor-button.sceditor-button-italic div::before {
+  content: "I";
+  font-size: 18px;
+  position: absolute;
+  text-indent: 0;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  line-height: 16px;
+  font-weight: 600;
+  font-family: "Arial", sans-serif;
+  font-style: italic;
+  color: transparent;
+  background: $gradient-primary-horizontal;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.sceditor-button.sceditor-button-underline div::before {
+  content: "U";
+  font-size: 18px;
+  position: absolute;
+  text-indent: 0;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  line-height: 16px;
+  font-weight: 600;
+  font-family: "Arial", sans-serif;
+  text-decoration: underline;
+  text-decoration-color: $color-primary;
+  color: transparent;
+  background: $gradient-primary-horizontal;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.sceditor-button.sceditor-button-strike div::before {
+  content: "S";
+  font-size: 18px;
+  position: absolute;
+  text-indent: 0;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  line-height: 16px;
+  font-weight: 600;
+  font-family: "Arial", sans-serif;
+  text-decoration: line-through;
+  text-decoration-color: $color-primary;
+  color: transparent;
+  background: $gradient-primary-horizontal;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.sceditor-button.sceditor-button-left div::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f036";
+  font-size: 18px;
+  position: absolute;
+  text-indent: 0;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  line-height: 16px;
+  font-weight: 900;
+  text-decoration-color: $color-primary;
+  color: transparent;
+  background: $gradient-primary-horizontal;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.sceditor-button.sceditor-button-center div::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f037";
+  font-size: 18px;
+  position: absolute;
+  text-indent: 0;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  line-height: 16px;
+  font-weight: 900;
+  text-decoration-color: $color-primary;
+  color: transparent;
+  background: $gradient-primary-horizontal;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.sceditor-button.sceditor-button-right div::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f038";
+  font-size: 18px;
+  position: absolute;
+  text-indent: 0;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  line-height: 16px;
+  font-weight: 900;
+  text-decoration-color: $color-primary;
+  color: transparent;
+  background: $gradient-primary-horizontal;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.sceditor-button.sceditor-button-justify div::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f039";
+  font-size: 18px;
+  position: absolute;
+  text-indent: 0;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  line-height: 16px;
+  font-weight: 900;
+  text-decoration-color: $color-primary;
+  color: transparent;
+  background: $gradient-primary-horizontal;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.sceditor-button.sceditor-button-headers div::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f1dc";
+  font-size: 17px;
+  position: absolute;
+  text-indent: 0;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  line-height: 16px;
+  font-weight: 900;
+  text-decoration-color: $color-primary;
+  color: transparent;
+  background: $gradient-primary-horizontal;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+// REVUE DES SUJETS
+
+.block-review {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  font-size: 13px !important;
+  h3 {
+    font-size: 18px !important;
+    font-weight: 500;
+    color: $color-secondary;
+  }
+
+  p.author {
+    font-size: 13px;
+    font-family: $font-sans-title;
+  }
+
+  .postbody .content {
+    font-size: 13px;
+  }
+
+  .post {
+    border-bottom: 1px solid transparentize($color-secondary, 0.75);
+  }
+}
+
+// SMILIES
+
+#smiley-box,
+.smile-status-box {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+// PMS
+#privmsgs-menu {
+  display: flex;
+  margin-bottom: 0;
+  li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-family: $font-sans-title;
+    min-height: 40px;
+    a:hover {
+      color: white;
+    }
+    i {
+      font-size: 30px;
+      color: $color-primary;
+      margin-right: 10px;
+    }
+  }
+}
+
+.pm-actions-buttons {
+  .button1,
+  .button2 {
+    margin-right: 5px;
+  }
+}
+
+.pmlist {
+  dl.icon dd.dterm,
+  dl.icon dt {
+    background-position: right 0 bottom 9px;
+    background-repeat: no-repeat;
+    font-size: 12px;
+    a {
+      font-family: $font-sans-title;
+    }
+  }
+  dd.mark {
+    display: flex !important;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.postprofile-avatar {
+  img {
+    object-fit: cover;
+    border: 2px solid transparentize($color-secondary, 0.75);
+  }
+}
+
+.post.row2 {
+  background: black;
+  .author {
+    font-family: $font-sans-title;
+  }
+  .postbody .content {
+    font-size: 13px;
+  }
+}
+
+.postprofile-name {
+  font-family: $font-sans-title;
+  text-transform: uppercase;
+}

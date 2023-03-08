@@ -1,0 +1,33 @@
+%base-link {
+    text-decoration: none;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+
+    &--simple {
+        color: $color-secondary;
+        font-weight: 600;
+    }
+}
+
+%base-title {
+    text-transform: uppercase;
+    font-family: $font-sans-title;
+
+    &--large {
+        font-size: 48px;
+    }
+
+    &--medium {
+        font-size: 36px;
+    }
+
+    &--small {
+        font-size: 24px;
+    }
+    
+    &--xsmall {
+        font-size: 14px;
+    }
+}

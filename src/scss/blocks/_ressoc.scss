@@ -1,0 +1,199 @@
+.ressoc {
+    br { 
+        display: none;
+    }
+    &__banner {
+        @include borderColorAsGroupClass();
+        position: relative;
+        height: 150px;
+        border-bottom: 1px solid;
+    }
+    &__banner-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__icon {
+        @include borderColorAsGroupClass();
+        position: absolute;
+        bottom: 0;
+        left: 1.25rem;
+        transform: translateY(50%);
+        border: 10px solid;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        z-index: 2;
+    }
+
+    &__icon-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__intro {
+        background-color: #060606;
+        padding: 1.25rem;
+    }
+
+    &__heading {
+        text-align: right;
+    }
+
+    &__pseudo {
+        @include colorAsGroupClass;
+        margin-bottom: 0;
+        line-height: 1;
+    }
+
+    &__handle {
+        font-size: 14px;
+        color: $color-mid-grey;
+    }
+
+    &__recap {
+        display: flex;
+        gap: 1rem;
+        padding-top: 1rem;
+        flex-direction: column;
+        @include breakpoint($breakpoint-l) {
+            flex-direction: row;
+        }
+    }
+
+    &__images {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    &__stats-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__stat-line {
+        @include colorAsGroupClass();
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    &__tweet {
+        background-color: #060606;
+        padding: 1.5rem 1.25rem 1.25rem;
+        border-radius: 6px;
+        
+        br {
+            display: none;
+        }
+    }
+
+    &__tweet-content {
+        @include borderColorAsGroupClass();
+        border: 1px solid;
+        padding: 1rem;
+        font-size: 13px;
+        border-radius: 6px;
+        position: relative;
+
+        &::before {
+            @include colorAsGroupClass();
+            content: 'Nouveau tweet';
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-style: italic;
+            line-height: 1;
+            position: absolute;
+            top: -14px;
+            left: 1.25rem;
+        }
+
+        br {
+            display: initial;
+        }
+    }
+    
+    &__msg-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-family: $font-sans-title;
+        padding: 1rem 0;
+        @include breakpoint($breakpoint-l) {
+            flex-direction: row;
+        }
+
+        br { 
+            display: none;
+        }
+    }
+    
+    &__msg-icon {
+        @include borderColorAsGroupClass();
+        border-radius: 50%;
+        border: 5px solid;
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        overflow: hidden;
+        @include breakpoint($breakpoint-l) {
+            border: 10px solid;
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &__msg-icon-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__msg-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        line-height: 1;
+
+        & > span {
+            @include colorAsGroupClass();
+            font-weight: 600;
+            margin-left: 3px;
+        }
+    }
+    
+    &__msg-handle {
+        margin-bottom: 4px;
+        color: $color-mid-grey;
+        font-size: 12px;
+    }
+
+    &__msg-content {
+        @include borderColorAsGroupClass();
+        @include bgFilterAsGroupClass();
+        border: 2px solid;
+        padding: 1rem 3rem;
+        border-radius: 0 45px 45px 45px;
+        font-size: 13px;
+
+        br {
+            display: initial;
+        }
+    }
+
+}

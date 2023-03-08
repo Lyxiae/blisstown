@@ -1,0 +1,164 @@
+// # Colors
+//
+// Color variables SHOULD be prefixed with 'color-' to identify them easier and to be able to
+// filter them in your favorite IDE/editor's auto-completion when typing.
+//
+// You can use tools like [Name that color](http://chir.ag/projects/name-that-color) to create
+// color names.
+// When doing so, you can add a second prefix to group colors and order them from lightest to darkest:
+//
+// ```scss
+// $color-red: #f00;
+// $color-red-monza: #D20434;
+// ```
+
+// COLORS OLD
+
+$color-pomegranate-red: #f84821;
+
+$color-holly-black: #010b08;
+
+$color-aztec-black: #0d1a17;
+$color-swamp-black: #00150f;
+$color-bean-black: #0a1a12;
+
+$color-confetti-yellow: #e9c25d;
+$color-picasso-yellow: #fff59f;
+$color-ronchi-yellow: #f1c146;
+$color-vis-yellow: #ffea9f;
+
+$color-bush-green: #103026;
+$color-kaitoke-green: #005431;
+$color-racing-green: #0b100e;
+$color-magic-mint-green: #a7eccf;
+$color-bottle-green: #020e09;
+$color-elf-green: #0c976d;
+
+// COLORS NEW
+$color-turquoise: #27dbba;
+$color-bright-turquoise: #08f1d5;
+$color-alizarin-red: #db2748;
+$color-mine-shaft: #202020;
+$color-cod-gray: #121212;
+$color-bunker: #090f11;
+$color-pearl-black: #020f0b;
+$color-text: #b3b3b3;
+$color-mid-grey: #757575;
+
+// GROUPS COLORS
+$color-cercle: #9747ff;
+$color-llorona: #29df67;
+$color-exiles: #ff9c09;
+$color-townies: #5c59fb;
+$color-hellhounds: #db2748;
+$color-jupiter: #4faaff;
+
+$color-discord: #2445ba;
+
+// ## Theme
+$color-primary: $color-alizarin-red;
+
+$color-primary-invert: if($color-primary, text-contrast($color-primary), null);
+
+$color-secondary: $color-turquoise;
+$color-secondary-invert: if(
+  $color-secondary,
+  text-contrast($color-secondary),
+  null
+);
+
+$color-tertiary: $color-pomegranate-red;
+
+$color-warning: $color-tertiary;
+
+// ## Defaults
+$color-default: $color-white;
+$color-default-selection: null;
+$color-default-background: null;
+$color-default-link: $color-secondary;
+
+// ## Misc
+//GRADIENT
+$gradient-darken: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+$gradient-primary-horizontal: linear-gradient(
+  90deg,
+  rgba(219, 39, 72, 1) 0%,
+  rgba(182, 28, 56, 1) 100%
+);
+$gradient-secondary-horizontal: linear-gradient(
+  90deg,
+  rgba(121, 255, 230, 1) 0%,
+  rgba(39, 219, 186, 1) 100%
+);
+$gradient-jauge: linear-gradient(
+  90deg,
+  rgba(39, 219, 186, 1) 0%,
+  rgba(0, 128, 168, 1) 100%
+);
+
+$gradient-townies: linear-gradient(
+  90deg,
+  $color-townies 0%,
+  darken($color-townies, 10%) 50%
+);
+
+$gradient-jupiter: linear-gradient(
+  90deg,
+  $color-jupiter 0%,
+  darken($color-jupiter, 20%) 50%
+);
+
+$gradient-cercle: linear-gradient(
+  90deg,
+  $color-cercle 0%,
+  darken($color-cercle, 20%) 50%
+);
+$gradient-llorona: linear-gradient(
+  90deg,
+  $color-llorona 0%,
+  darken($color-llorona, 20%) 50%
+);
+$gradient-exiles: linear-gradient(
+  90deg,
+  $color-exiles 0%,
+  darken($color-exiles, 20%) 50%
+);
+
+$gradient-hellhounds: linear-gradient(
+  90deg,
+  $color-hellhounds 0%,
+  darken($color-hellhounds, 20%) 50%
+);
+
+// VERTICAL TO BLACK
+$gradient-townies-vert: linear-gradient(
+  180deg,
+  transparentize($color-townies, 0.65) 0%,
+  transparentize($color-townies, 1) 50%
+);
+
+$gradient-jupiter-vert: linear-gradient(
+  180deg,
+  transparentize($color-jupiter, 0.70) 0%,
+  transparentize($color-jupiter, 1) 50%
+);
+$gradient-cercle-vert: linear-gradient(
+  180deg,
+  transparentize($color-cercle, 0.70) 0%,
+  transparentize($color-cercle, 1) 50%
+);
+$gradient-llorona-vert: linear-gradient(
+  180deg,
+  transparentize($color-llorona, 0.75) 0%,
+  transparentize($color-llorona, 1) 50%
+);
+$gradient-exiles-vert: linear-gradient(
+  180deg,
+  transparentize($color-exiles, 0.70) 0%,
+  transparentize($color-exiles, 1) 50%
+);
+$gradient-hellhounds-vert: linear-gradient(
+  180deg,
+  transparentize($color-hellhounds, 0.70) 0%,
+  transparentize($color-hellhounds, 1) 50%
+);

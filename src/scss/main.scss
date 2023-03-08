@@ -1,0 +1,68 @@
+// # Main entry point
+//
+// ## Variables, mixins, functions, …
+// - This file should be automatically imported before every scss file when using Webpack
+//   See https://github.com/webpack-contrib/sass-loader#prependdata
+// - You can do the same in Vue Single File Components (SFC) with Vue CLI
+//   See https://cli.vuejs.org/guide/css.html#passing-options-to-pre-processor-loaders
+// - If you can't import it automatically in every file, uncomment the following line
+//@import "lib/lib";
+//
+// ## Font-faces
+@import "font-faces";
+//
+// Base styles
+@import "base";
+//
+// ## Icon classes
+@import "lib/icons/classes";
+//
+// ## Vendors
+//@import "vendors/example-vendor-styles";
+//
+// ## Components
+// - If you're not using one or any of those components, feel free to remove them (import statement + file)
+// - If you're using VueJS, consider to use SFCs instead (and remove the following imports to avoid code duplicates)
+@import "components/base-btn";
+@import "components/base-components";
+@import 'components/titles';
+@import 'components/button';
+@import 'components/toolbar';
+@import 'components/blocks';
+@import 'components/links';
+@import 'components/editors';
+@import 'components/post-contents';
+
+//BLOCKS
+@import 'blocks/header';
+@import 'blocks/index-box';
+@import 'blocks/footer';
+@import 'blocks/qeel';
+@import 'blocks/last-posts';
+@import 'blocks/swiper';
+@import 'blocks/viewtopic';
+@import 'blocks/topic-profile-field';
+@import 'blocks/main-navbar';
+@import 'blocks/pa';
+@import 'blocks/last-posts';
+@import 'blocks/viewforum';
+@import 'blocks/viewtopic';
+@import 'blocks/posting-body';
+@import 'blocks/post-review';
+@import 'blocks/privmsg-read';
+@import 'blocks/profileview';
+@import 'blocks/memberlist';
+@import 'blocks/poll';
+@import 'blocks/edit-profile';
+@import 'blocks/privmsgs';
+@import 'blocks/guide';
+@import 'blocks/fiche';
+@import 'blocks/fpres';
+@import 'blocks/listings';
+@import 'blocks/fcarnet';
+@import 'blocks/ressoc';
+@import 'blocks/forms';
+@import 'blocks/teasing';
+//
+// ## Print
+@import "print";

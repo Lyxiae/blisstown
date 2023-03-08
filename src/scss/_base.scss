@@ -1,0 +1,349 @@
+// # Base styles : opinionated defaults
+//
+// Inspired from [HTML5 boilerplate](https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css)
+html {
+  color: $color-default;
+  font-family: $font-default;
+  font-size: 1em;
+  line-height: $base-line-height;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+
+  scrollbar-color: #666 $color-black;
+  scrollbar-width: thin;
+
+  * {
+    scrollbar-width: thin;
+    box-sizing: border-box;
+    scroll-margin-top: 60px;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $color-black;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $color-primary;
+    border-radius: 2em;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $color-primary;
+  }
+
+  @if ($default-scroll-behavior != auto) {
+    scroll-behavior: $default-scroll-behavior;
+
+    // See https://developer.mozilla.org/fr/docs/Web/CSS/scroll-behavior#Accessibilit%C3%A9
+    @media (prefers-reduced-motion: reduce) {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+::selection {
+  @if ($color-default-selection) {
+    background-color: $color-default-selection;
+    text-shadow: none;
+  }
+}
+
+* {
+  &,
+  &::before,
+  &::after {
+    // Inherit from parent (set to `border-box` in `html`, see below)
+    // This allow easy override and may avoid conflicts with external content
+    box-sizing: inherit;
+  }
+}
+
+body {
+  background: $color-bunker;
+  margin-top: 0px !important;
+}
+
+// Vertical rhythm: Remove top margin of common elements
+// @see https://csswizardry.com/2012/06/single-direction-margin-declarations/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+ul,
+ol,
+dd,
+p,
+figure,
+pre,
+table,
+fieldset,
+hr {
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+
+  // Stylize default links (those who have no CSS class)
+  // Avoids to override default styles every time you need to customize a specific link
+  &:not([class]) {
+    @extend %base-link;
+  }
+}
+
+// Remove the gap between audio, canvas, iframes,
+// images, videos and the bottom of their containers:
+// https://github.com/h5bp/html5-boilerplate/issues/440
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+// Add offset to anchors when header is sticky
+// See https://stackoverflow.com/a/56467997/1224564
+// See https://caniuse.com/?search=scroll-padding-top (not working with IE11)
+//@include breakpoint($breakpoint-l) {
+//  html {
+//    $header-height: null !default;
+//    scroll-padding-top: $header-height;
+//  }
+//}
+//
+// OR
+//
+// If you need to support IE11
+// See https://stackoverflow.com/a/28824157/1224564
+// Caveat: It assumes the header has a fixed height
+//@include breakpoint($breakpoint-l) {
+//  :target {
+//    $header-height: null;
+//
+//    &::before {
+//      content: "";
+//      display: block;
+//      height: $header-height;
+//      margin-top: -$header-height;
+//    }
+//  }
+//}
+
+option,
+optgroup {
+  color: initial;
+}
+
+// Allow only vertical resizing of textareas.
+textarea {
+  resize: vertical;
+}
+
+// Prevent using line breaks and blank paragraphs for spacing
+// See https://twitter.com/csswizardry/status/1170835532584235008?s=20
+//br + br,
+//p:empty {
+//  display: none;
+//}
+
+button {
+  // Stylize default buttons (those who don't have any CSS class)
+  // Avoids to override default styles every time you need to customize a specific button
+  &:not([class]) {
+    @extend %base-btn;
+    @extend %base-btn--default;
+  }
+
+  &:disabled,
+  &[disabled],
+  &.base-btn--disabled {
+    &:not([class]) {
+      @extend %base-btn--disabled;
+    }
+  }
+
+  &[type="submit"] {
+    &:not([class]) {
+      @extend %base-btn--primary;
+    }
+  }
+}
+
+input {
+  &[type="submit"] {
+    &:not([class]) {
+      @extend %base-btn;
+      @extend %base-btn--primary;
+    }
+  }
+
+  &[type="reset"] {
+    &:not([class]) {
+      @extend %base-btn;
+      @extend %base-btn--default;
+    }
+  }
+}
+
+.jupiter {
+  &-color {
+    color: $color-tertiary;
+  }
+  &-bg {
+    background-color: $color-jupiter;
+  }
+}
+
+.cercle {
+  &-color {
+    color: $color-cercle;
+  }
+  &-bg {
+    background-color: $color-cercle;
+  }
+}
+
+.llorona {
+  &-color {
+    color: $color-llorona;
+  }
+  &-bg {
+    background-color: $color-llorona;
+  }
+}
+
+.hellhounds {
+  &-color {
+    color: $color-hellhounds;
+  }
+  &-bg {
+    background-color: $color-hellhounds;
+  }
+}
+
+.exiles {
+  &-color {
+    color: $color-exiles;
+  }
+  &-bg {
+    background-color: $color-exiles;
+  }
+}
+
+.townies {
+  &-color {
+    color: $color-townies;
+  }
+  &-bg {
+    background-color: $color-townies;
+  }
+}
+
+#main-content {
+  overflow: hidden;
+  @include breakpoint(768px) {
+    overflow: unset;
+  }
+}
+
+#smiley-box {
+  display: none;
+}
+
+.editor-textarea_content {
+  width: 100% !important;
+}
+
+.submit-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#tabs {
+  max-width: 1300px;
+  margin: 0 auto;
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+    gap: 0.5rem;
+
+    li {
+      font-size: 14px;
+      transition: color 0.3s;
+      background-color: rgba(0, 0, 0, 5);
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+
+      &:hover {
+        color: $color-secondary;
+      }
+      &.activetab {
+        font-weight: bold;
+        color: $color-secondary;
+        background-color: black;
+      }
+    }
+  }
+}
+
+.page-title {
+  @extend %title;
+  @extend %title--m;
+  @extend %title--primary;
+  margin-bottom: 0;
+}
+
+.table1 {
+  width: 100%;
+  font-size: 13px;
+}
+
+.right,
+.frm-form p {
+  display: flex;
+  gap: 0.5rem;
+}
+
+a.gensmall {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: $color-primary;
+  font-weight: 600;
+
+  &:hover {
+    color: white;
+  }
+}
+
+
+.paragraph {
+  font-size: 14px;
+  a {
+    color: $color-primary;
+    &:hover {
+      color: white;
+    }
+  }
+}

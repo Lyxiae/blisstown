@@ -1,0 +1,277 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  &__form-group {
+    &--textarea {
+      grid-column: span 2;
+
+      textarea {
+        min-height: 8rem;
+      }
+
+      
+    }
+
+    & > input,
+    & > textarea, & > select {
+      line-height: 1.5;
+      width: 100%;
+      border-color: transparent;
+
+      &:focus {
+        outline: 2px solid rgba($color-secondary, 0.2);
+      }
+    }
+
+    &.ranges {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+      justify-items: center;
+      align-items: center;
+      grid-gap: 1rem;
+    }
+
+    .range-label {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $color-secondary;
+    }
+
+    label {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding-left: 1rem;
+    }
+  }
+  &__input-infos {
+    font-size: 12px;
+    font-style: italic;
+    color: $color-mid-grey;
+    margin: 0;
+    padding: 5px 0;
+
+    a {
+      color: $color-primary;
+      font-weight: 500;
+    }
+  }
+
+  &__add-grid {
+    display: grid;
+    gap: 1rem;
+    @include breakpoint($breakpoint-s) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .form__form-group--textarea {
+      grid-column: initial;
+    }
+  }
+
+  &__add-section {
+    display: flex;
+    border: 2px solid;
+    border-radius: 50%;
+    flex-shrink: 0;
+    padding-top: 1px;
+    width: 20px;
+    height: 20px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.form-pres {
+  @extend %main-container;
+  background-color: $color-bunker;
+  padding: 2rem;
+  &__pres-id,
+  &__traits {
+    display: grid;
+    gap: 1rem;
+    @include breakpoint($breakpoint-s) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__text {
+    padding: 1rem;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 6px;
+  }
+
+  &__title {
+    @extend %main-container;
+    @extend %title;
+    @extend %title--xl;
+    text-align: center;
+    padding: 1rem;
+    background: $gradient-primary-horizontal;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: 800;
+  }
+
+  &__secondary-title {
+    @extend %title;
+    @extend %title--m;
+    @extend %title--primary;
+
+    grid-column: span 2;
+    margin-bottom: 0;
+  }
+
+  &__text-inputs, &__pres-hrp {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  &__jauges {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    // INPUT RANGE
+
+input[type="range"] {
+  height: 26px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background: none;
+  border: none;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px $color-black;
+  background: $color-black;
+  border-radius: 5px;
+  border: 1px solid $color-black;
+}
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px $color-black;
+  border: 0px solid $color-black;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: $color-secondary;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5.5px;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: $color-black;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px $color-black;
+  background: $color-black;
+  border-radius: 5px;
+  border: 1px solid $color-black;
+}
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px $color-black;
+  border: 0px solid $color-black;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: $color-secondary;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: $color-black;
+  border: 1px solid $color-black;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px $color-black;
+}
+input[type="range"]::-ms-fill-upper {
+  background: $color-black;
+  border: 1px solid $color-black;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px $color-black;
+}
+input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px $color-black;
+  border: 0px solid $color-black;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: $color-secondary;
+  cursor: pointer;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: $color-black;
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: $color-black;
+}
+
+  }
+}
+
+.form-section {
+  max-height: 200vh;
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.3s;
+  &--hidden {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  @include breakpoint($breakpoint-s) {
+    min-width: 360px;
+  }
+}
+
+.form-page {
+    background-image: url("../../assets/dots-motif.jpg");
+  background-repeat: repeat;
+  background-size: 20px 20px;
+  padding: 1rem;
+  @include breakpoint($breakpoint-s) {
+    padding: 2rem;
+  }
+}

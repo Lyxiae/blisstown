@@ -1,0 +1,72 @@
+.teasing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/bg-teasing.jpg');
+    background-size: cover;
+    position: relative;
+    padding: 1rem;
+
+    &__character {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        max-height: 70vh;
+    }
+
+    &__container {
+        max-width: 850px;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 0;
+    }
+
+    &__phrases {
+        margin-bottom: 1rem;
+        font-size: 14px;
+        font-style: italic;
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    &__add {
+        color: $color-secondary;
+        font-weight: 600;
+        text-align: right;
+        padding: 0.5rem 0;
+    }
+
+    &__middle {
+        text-align: center;
+    }
+
+    &__right {
+        text-align: right;
+    }
+
+    &__context {
+        background: rgba(0,0,0,0.85);
+        border-radius: 6px;
+        text-align: justify;
+        padding: 2rem;
+        font-size: 15px;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 0.5rem;
+        flex-direction: column;
+        @include breakpoint($breakpoint-s) {
+            justify-content: flex-end;
+            flex-direction: row;
+        }
+    }
+}

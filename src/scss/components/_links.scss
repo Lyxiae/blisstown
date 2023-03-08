@@ -1,0 +1,23 @@
+.link {
+  text-decoration: none;
+
+  &--primary {
+    text-decoration: none;
+    color: $color-primary;
+    font-weight: 600;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &--secondary {
+    text-decoration: none;
+    color: $color-secondary;
+    font-weight: 600;
+
+    &:hover {
+      color: white;
+    }
+  }
+}

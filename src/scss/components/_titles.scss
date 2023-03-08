@@ -1,0 +1,46 @@
+.title {
+    @extend %title;
+    &--xxxl {
+        @extend %title--xxxl;
+    }
+
+    &--xxl {
+        @extend %title--xxl;
+    }
+
+    &--xl {
+        @extend %title--xl;
+    }
+
+    &--l {
+        @extend %title--l;
+    }
+
+    &--m {
+        @extend %title--m;
+    }
+
+    &--s {
+        @extend %title--s;
+    }
+
+    &--xs {
+        @extend %title--xs;
+    }
+
+    &--xxs {
+        @extend %title--xxs;
+    }
+
+    &--primary {
+        @extend %title--primary;
+    }
+
+    &--secondary {
+        @extend %title--secondary;
+    }
+
+    &--underlined {
+        border-bottom: 1px solid;
+    }
+}

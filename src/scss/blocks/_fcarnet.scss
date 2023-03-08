@@ -1,0 +1,74 @@
+.f-carnet {
+    br {
+        display: none;
+    }
+
+    &__identity {
+        width: 100%;
+        grid-column: span 2;
+        position: relative;
+        padding-top: 1.5rem;
+    }
+
+    .fiche__field-content {
+        br {
+            display: block;
+        }
+    }
+
+    &__physical-icon {
+        position: absolute;
+        top: 4rem;
+        right: 1rem;
+        font-size: 160px;
+        opacity: 0.1
+    }
+
+    &__links-types {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .fiche__field-content {
+            background-color: black;
+        }
+    }
+
+    &__rp-tracking {
+        padding: 1rem;
+        @include bgPrezGradientAsGroupClass();
+        background-size: 100% 200% !important;
+    }
+
+    &__rp-tracking-text {
+        font-size: 14px;
+        padding: 0.5rem 0 0;
+        margin-bottom: 0;
+        br {
+            display: block;
+        }
+        a {
+            color: $color-primary;
+            font-weight: 500;
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    &__rp-tracking-title {
+        font-weight: bold;
+        font-style: italic;
+        @include colorAsGroupClass();
+    }
+
+    &__link-desc {
+        text-align: left;
+        font-family: $font-sans-title;
+
+        br {
+            display: initial !important;
+        }
+    }
+}

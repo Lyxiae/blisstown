@@ -1,0 +1,43 @@
+%title {
+  text-transform: uppercase;
+  font-family: $font-sans-title;
+  &--xxxl {
+    font-size: 82px;
+  }
+
+  &--xxl {
+    font-size: 60px;
+  }
+
+  &--xl {
+    font-size: 48px;
+  }
+
+  &--l {
+    font-size: 40px;
+  }
+
+  &--m {
+    font-size: 30px;
+  }
+
+  &--s {
+    font-size: 22px;
+  }
+
+  &--xs {
+    font-size: 20px;
+  }
+
+  &--xxs {
+    font-size: 18px;
+  }
+
+  &--primary {
+    color: $color-primary;
+  }
+
+  &--secondary {
+    color: $color-secondary;
+  }
+}

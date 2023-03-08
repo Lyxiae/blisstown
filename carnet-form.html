@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BLISSTOWN RPG</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <link rel="stylesheet" href="dist/main.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="form-page">
+        <div class="form-pres__title">Fiche de présentation</div>
+      <div class="form-pres">
+          <form id="fichePres" class="form" action="/posting.forum" method="post" name="fichePres" enctype="multipart/form-data"
+              target="_blank" onSubmit="creationMessage(this)">
+
+              <input type="hidden" name="mode" value="newtopic" />
+              <input type="hidden" name="topictype" value="0" checked="checked" />
+              <input type="hidden" name="message" value="" />
+              <input type="hidden" name="f" value="11" />
+
+              <!-- Faction -->
+              <div class="form__form-group form-pres__select">
+                  <label>Faction</label>
+                  <select name="groupe" class="form__select" id="groupe-select">
+                      <option value="jupiter">Jupiter</option>
+                      <option value="hellhounds">Hellhounds</option>
+                      <option value="llorona">La Llorona</option>
+                      <option value="cercle">Le Cercle</option>
+                      <option value="exiles">Exilés</option>
+                      <option value="townies">Blisstownies</option>
+                  </select>
+              </div>
+              <div class="form-pres__secondary-title">
+                Identité
+            </div>
+
+              <!-- TITRE -->
+              <div class="form__form-group form-pres__titre-sujet"> <label for="Titre">Titre</label><br />
+                  <input type="text" name="subject" id="titre" value="" /></div>
+
+              <div class="form-pres__feat-section">
+                  <!-- ICONE -->
+                  <div class="form__form-group"><label for="presAvatarImg">Lien de l'icone</label><br />
+                      <input id="presAvatarImg" name="presAvatarImg" value="" type="text"></input></div>
+              </div>
+
+              <div class="form-pres__pres-id">
+
+                  <!-- Prénom et Nom -->
+                  <div class="form__form-group form-pres__nom"><label for="Nom">Prénom(s) et Nom</label><br />
+                      <input id="presNom" name="presNom" value="" type="text"></input></div>
+                
+                      <div class="form__form-group"><label for="nickname">Surnom(s)</label><br />
+                        <input id="presNick" name="presNick" value="" type="text"></input></div>
+                  <!-- Age -->
+                  <div class="form__form-group">
+                    <label for="Age">Age</label><br />
+                    <input id="presAge" name="presAge" value="" type="text"></input>
+                </div>
+                <!-- Genre -->
+                <div class="form__form-group">
+                    <label for="Genre">Genre</label><br />
+                    <input id="presGenre" name="presGenre" value="" type="text"></input>
+                </div>
+                  <!-- Origine -->
+                  <div class="form__form-group"><label for="Origine">Origine</label><br />
+                      <input id="presOrigine" name="presOrigine" value="" type="text"></input>
+                      <p class="form__input-infos">La ville / le pays d'origine, pour savoir si votre personnage est Townie de naissance ou venu de l'extérieur.</p>
+                  </div>
+                  <!-- Métier -->
+                  <div class="form__form-group"><label for="Metier">Métier</label><br />
+                    <input id="presMetier" name="presMetier" value="" type="text"></input>
+                </div>
+                  <!-- Allégeance -->
+                <div class="form__form-group"><label for="Allégeance">Allégeance</label><br />
+                    <input id="presAllegeance" name="presAllegeance" value="" type="text"></input>
+                    <p class="form__input-infos">Votre personnage appartient-il à un groupe, une faction (secrète ou non) ?</p>
+                </div>  
+                <!-- Relation au Bliss -->
+                <div class="form__form-group"><label for="RelationBliss">Relation au Bliss</label><br />
+                    <input id="presRelBliss" name="presRelBliss" value="" type="text"></input>
+                </div>  
+                <!-- Résumé -->
+                <div class="form__form-group form__form-group--textarea"><label for="presResume">Résumé</label>
+                    <textarea name="presResume" id="presResume"></textarea>
+                    <p class="form__input-infos">Un résumé succinct de votre personnage, en quelques courtes lignes.</p>
+                </div>
+      
+            </div>
+            </div>
+
+            <div class="form__section">
+                <div class="form-pres__text">
+                    Vous pouvez utiliser la mise en forme forumactif dans ces champs. (ex: [b], [i], [url], etc).
+                </div>
+                
+                    <!-- Liens recherchés -->
+                    <div class="form-pres__secondary-title">Liens recherchés</div>
+                    <div class="form__form-group"><label for="carnetLien1">Lien 1</label><br />
+                        <input id="carnetLien1" name="carnetLien1" value="" type="text"></input>
+                    </div>  
+                    <div class="champtexta"><label for="carnetLien1Desc">Description du lien</label><br />
+                        <textarea name="carnetLien1Desc" id="carnetLien1Desc"></textarea>
+                    </div>
+
+                    <div class="form__form-group"><label for="carnetLien1">Lien 2</label><br />
+                        <input id="carnetLien2" name="carnetLien2" value="" type="text"></input>
+                    </div>  
+                    <div class="champtexta"><label for="carnetLien2Desc">Description du lien</label><br />
+                        <textarea name="carnetLien2Desc" id="carnetLien2Desc"></textarea>
+                    </div>
+
+                    <div class="form__form-group"><label for="carnetLien3">Lien 3</label><br />
+                        <input id="carnetLien3" name="carnetLien3" value="" type="text"></input>
+                    </div>  
+                    <div class="champtexta"><label for="carnetLien3Desc">Description du lien</label><br />
+                        <textarea name="carnetLien3Desc" id="carnetLien3Desc"></textarea>
+                    </div>
+                </div>
+                <div class="form__textarea-group">
+                    <!-- Chronologie -->
+                    <div class="champtexta"><label for="carnetChrono">Chronologie & histoire</label><br />
+                        <textarea name="carnetChrono" id="carnetChrono"></textarea></div>
+
+                </div>
+
+                <div class="form__textarea-group">
+                    <!-- Suivi rp -->
+                    <div class="champtexta"><label for="carnetSuivi">Suivi RP</label><br />
+                        <textarea name="carnetSuivi" id="carnetSuivi"></textarea></div>
+                </div>
+            </div>
+              
+              <div class="form-pres__buttons">
+                  <input type="reset" class="button1" name="reseta" value="Réinitialiser" />
+                  <input name="preview" value="Prévisualiser" tabindex="5" class="button1" type="submit" />
+
+                  <input type="submit" class="button button--primary" name="post" value="Poster la fiche" />
+              </div>
+          </form>
+      </div>
+  </main>
+  <!-- Scripts -->
+  <script src="src/js/external/carnet-form.js" async defer></script>
+  </body>
+</html>

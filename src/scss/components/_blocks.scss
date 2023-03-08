@@ -1,0 +1,13 @@
+.block,
+.panel {
+  background: black;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 1.25rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  &--smaller, &.row3 {
+    max-width: 1300px;
+  }
+}

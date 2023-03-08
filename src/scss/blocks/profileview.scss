@@ -1,0 +1,572 @@
+.profileview {
+  $block-selector: &;
+
+  &__container {
+    @extend %main-container;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &__head {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px 6px 0px 0px;
+    justify-content: space-between;
+
+    @include breakpoint(1100px) {
+      padding-left: 320px;
+    }
+
+    .townies & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .hellhounds & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .cercle & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .llorona & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .jupiter & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+    .exiles & {
+      background-image: url("../../assets/viewtopic/townie-bg.png");
+    }
+  }
+
+  &__name-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__name {
+    font-size: 28px;
+    padding: 2px 15px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.75);
+
+    @include breakpoint(1100px) {
+      font-size: 36px;
+      text-transform: uppercase;
+    }
+
+    b,
+    strong {
+      font-weight: 600 !important;
+    }
+  }
+
+  &__sub-name {
+    display: flex;
+    gap: 1rem;
+    padding: 0.25rem 0;
+
+    .profileview__field,
+    #{$block-selector}__rank-text {
+      color: white;
+      font-size: 12px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 0.15rem;
+      align-items: center;
+    }
+  }
+
+  &__head-icon-container {
+    position: relative;
+    display: none;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 50%;
+
+    @include breakpoint(768px) {
+      display: flex;
+    }
+
+    .topic-profile-field__label {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      width: 330px;
+      height: 330px;
+      outline: 10px solid rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translate(50%, -50%);
+      border-radius: 50%;
+    }
+    .townies & {
+      &::before {
+        background-image: $gradient-townies;
+        border-radius: 50%;
+      }
+    }
+    .hellhounds & {
+      &::before {
+        background: $gradient-hellhounds;
+      }
+    }
+    .cercle & {
+      &::before {
+        background: $gradient-cercle;
+      }
+    }
+    .llorona & {
+      &::before {
+        background: $gradient-llorona;
+      }
+    }
+    .jupiter & {
+      &::before {
+        background: $gradient-jupiter;
+      }
+    }
+    .exiles & {
+      &::before {
+        background: $gradient-exiles;
+      }
+    }
+
+    img {
+      position: relative;
+      z-index: 2;
+      border: 5px solid rgba(0, 0, 0, 0.5);
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__subhead-bar {
+    grid-column: span 3;
+    background-color: $color-black;
+    background-image: url("../../assets/dots-motif.jpg");
+    background-repeat: repeat;
+    background-size: 20px 20px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    min-height: 40px;
+    gap: 1rem;
+
+    @include breakpoint(768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include breakpoint(1100px) {
+      padding: 10px 10px 10px 325px;
+    }
+  }
+
+  &__groups-list {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__group {
+    border: 1px solid white;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: black;
+  }
+
+  &__posts-links {
+    display: flex;
+    gap: 0.5rem;
+  }
+  &__main {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding-bottom: 2rem;
+  }
+
+  &__main-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    @include breakpoint(768px) {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 270px 1fr;
+      grid-template-rows: repeat(10, auto);
+    }
+
+    @include breakpoint(1100px) {
+      grid-template-columns: 270px 1fr 1fr 1fr;
+      grid-template-rows: repeat(7, 1fr);
+      height: 585px;
+      padding: 2rem;
+    }
+  }
+
+  &__avatar-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+
+    position: relative;
+
+    @include breakpoint(768px) {
+      grid-row: span 6;
+    }
+
+    @include breakpoint(1100px) {
+      grid-row: span 4;
+      margin-top: -200px;
+    }
+
+    #avatar_membre {
+      display: block;
+      border: 10px solid rgba(0, 0, 0, 0.75);
+      border-radius: 6px;
+      img {
+        width: 250px;
+        height: 350px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__contact-fields {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__contact-field {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    background: 0;
+    border-radius: 6px;
+
+    a {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: black;
+      border-radius: 6px;
+      border: 1px solid;
+      font-size: 24px;
+
+      @include colorAsGroupClass();
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__field {
+    background: black;
+    border-radius: 6px;
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @include breakpoint(1100px) {
+      height: 100%;
+    }
+
+    &--user-json {
+      display: none;
+    }
+
+    &--date-dinscription {
+      display: none;
+    }
+
+    &--icon {
+      background: none;
+    }
+    &--messages {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 0.25rem;
+      align-items: center;
+      width: unset;
+      background: none;
+      min-height: unset;
+    }
+
+    &--disponibilite {
+      padding: 0;
+      background: none;
+    }
+    &--citation {
+      @include breakpoint(768px) {
+        grid-column: span 2;
+      }
+      @include breakpoint(1100px) {
+        grid-row-start: 4;
+        grid-column: 2 / 4;
+        font-size: 12px;
+      }
+    }
+
+    &--alteration {
+      font-size: 12px;
+      padding: 10px;
+      @include breakpoint(768px) {
+        grid-column: span 2;
+      }
+      @include breakpoint(1100px) {
+        grid-column: 4 / 5;
+        grid-row: 1 / 4;
+      }
+    }
+
+    &--biographie {
+      padding: 10px;
+      font-size: 12px;
+      grid-column: span 2;
+      width: 100%;
+      @include breakpoint(768px) {
+        grid-column: span 2;
+      }
+      @include breakpoint(1100px) {
+        grid-column: 4 / 5;
+        grid-row: 4 / 8;
+      }
+
+      &::before {
+        content: "Qui suis-je ?";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-weight: 700;
+        color: black;
+        background-color: #bbb;
+        border-radius: 6px 6px 0 0;
+        text-transform: uppercase;
+        font-size: 24px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        @include bgColorAsGroupClass();
+      }
+    }
+  }
+
+  &__field-label {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0.2;
+    text-transform: uppercase;
+    font-style: italic;
+    @include colorAsGroupClass();
+
+    .profileview__field--icon & {
+      display: none;
+    }
+
+    .profileview__field--biographie & {
+      display: none;
+    }
+
+    .profileview__field--messages & {
+      color: white !important;
+      font-size: 12px;
+      text-transform: uppercase;
+      opacity: 1;
+      font-weight: normal;
+      font-style: normal;
+      position: static;
+    }
+
+    .profileview__field--disponibilite & {
+      display: none;
+    }
+  }
+
+  &__field-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: justify;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+
+    .profileview__field--messages & {
+      padding: 0 2px;
+    }
+
+    .profileview__field--disponibilite & {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profileview__field--citation & {
+      font-size: 12px;
+    }
+
+    .profileview__field--biographie & {
+      margin: 44px 0 0;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: calc(100% - 50px);
+      width: 100%;
+      overflow: auto;
+      font-size: 12px;
+    }
+    .profileview__field--alteration & {
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      font-size: 12px;
+    }
+
+    .profileview__head-icon-container & {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__badges {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    min-height: 210px;
+    height: 100%;
+    width: 100%;
+    @include breakpoint(768px) {
+      grid-column: span 2;
+    }
+    @include breakpoint(1100px) {
+      grid-row-start: 5;
+      grid-row: span 3;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__badges-title {
+    width: 60px;
+    height: 100%;
+    min-height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    background-color: #bbb;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+    @include bgColorAsGroupClass();
+
+    div {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__badges-content {
+    background-color: black;
+    padding: 10px;
+    flex-grow: 1;
+    min-height: 210px;
+  }
+
+  &__hrp-fields {
+    border: 1px solid $color-mine-shaft;
+    border-radius: 6px;
+    padding: 2rem;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    position: relative;
+    margin: 2rem 2rem 0 2rem;
+    @include breakpoint(768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint(768px) {
+      grid-template-columns: 1fr 1fr 2fr;
+    }
+
+    .profileview__field {
+      height: 60px;
+    }
+  }
+
+  &__hrp-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    position: absolute;
+    left: 2rem;
+    top: -1rem;
+  }
+
+  &__avail-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .field_editable.invisible {
+    display: none;
+  }
+
+  &__bottom {
+    padding: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: $color-secondary;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ajax-profil_edit {
+    display: none;
+  }
+}

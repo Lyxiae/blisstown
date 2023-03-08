@@ -1,0 +1,301 @@
+.main-navbar {
+  $block-selector: &;
+
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  z-index: 200;
+  width: 100%;
+  padding: 0 0.5rem;
+
+  &__site-link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 40px;
+  }
+
+  &__left-menus {
+    display: flex;
+    height: 100%;
+    gap: 1rem;
+  }
+
+  &__dropdown-container {
+    position: relative;
+    display: none;
+    pointer-events: none;
+    @include breakpoint(1024px) {
+      display: flex;
+      pointer-events: all;
+    }
+
+    &:hover {
+      #{$block-selector}__dropdown-opener {
+        filter: brightness(1.2);
+        .icon {
+          transform: rotate(90deg);
+        }
+      }
+      #{$block-selector}__dropdown-menu {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__dropdown-opener {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    height: 100%;
+    color: $color-secondary;
+    font-weight: 600;
+
+    &:hover {
+      filter: brightness(1.2);
+      .icon {
+        transform: rotate(90deg);
+      }
+    }
+
+    .icon {
+      display: inline-flex;
+      transition: transform 0.3s;
+      transform-origin: center center;
+    }
+
+    &.dropdown-active {
+      filter: brightness(1.2);
+      .icon {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__dropdown-menu {
+    background-color: black;
+    opacity: 0;
+    transform: translate(-50%, -20px);
+    pointer-events: none;
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 6px 6px;
+    z-index: 10;
+    width: 200px;
+    padding: 0.75rem;
+    gap: 0.5rem;
+
+    &.dropdown-active {
+      opacity: 1;
+      transform: translate(-50%, 0);
+      pointer-events: all;
+    }
+  }
+
+  &__dropdown-link {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    line-height: 0.875rem;
+    gap: 0.25rem;
+    transition: gap 0.3s;
+    &:hover {
+      gap: 0.5rem;
+    }
+
+    .icon {
+      color: $color-secondary;
+    }
+  }
+
+  &__navlinks {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    li {
+      font-size: 0;
+    }
+
+    .mainmenu {
+      position: relative;
+      height: 35px;
+      width: 35px;
+      color: $color-secondary;
+      border-radius: 35px;
+      border: 1px solid $color-mine-shaft;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: filter 0.3s;
+      font-size: 0;
+      text-transform: uppercase;
+      margin-left: 0.5rem;
+      font-family: $font-sans-title;
+      color: #ccc;
+      @include breakpoint(1000px) {
+        font-size: 12px;
+        padding: 0 8px;
+        width: auto;
+        gap: 6px;
+      }
+      &:hover {
+        filter: brightness(1.2);
+        background-color: $color-mine-shaft;
+      }
+
+      img {
+        display: none !important;
+      }
+
+      &[href*="/portal"],
+      &[href*="/calendar"],
+      &[href*="/search"],
+      &[href*="/faq"],
+      &[href*="/groups"] {
+        display: none;
+      }
+
+      .toread-message {
+        width: 16px;
+        height: 16px;
+        background-color: #db2748;
+        color: black;
+        font-size: 11px;
+        line-height: 16px;
+        font-family: sans-serif;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: -2px;
+        right: -5px;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+
+      &::before {
+        font-size: 1.1rem;
+        display: flex;
+        font-family: $font-icons;
+        color: $color-secondary;
+      }
+      &[href="/"]::before {
+        @extend %icon;
+        @extend %icon--home;
+      }
+
+      &[href="/memberlist"]::before {
+        @extend %icon;
+        @extend %icon--users;
+      }
+
+      &[href*="editprofile"]::before {
+        @extend %icon;
+        @extend %icon--pencil;
+      }
+
+      &[href*="/privmsg"]::before {
+        @extend %icon;
+        @extend %icon--round-chatbox;
+        padding-left: 5px;
+      }
+
+      &[href*="/login"]::before {
+        @extend %icon;
+        @extend %icon--login;
+      }
+
+      &[href*="/login?logout"]::before {
+        @extend %icon;
+        @extend %icon--logout;
+      }
+
+      &[href*="/login?logout"] {
+        font-size: 0px;
+        gap: 0;
+      }
+
+      &[href*="/register"]::before {
+        @extend %icon;
+        @extend %icon--pencil;
+      }
+    }
+  }
+
+  &__mobile-burger {
+    width: 35px;
+    height: 35px;
+    color: $color-secondary;
+    border-radius: 50%;
+    background-color: $color-mine-shaft;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    align-self: center;
+    @include breakpoint(1024px) {
+      display: none;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: -100vw;
+  transition: 0.3s;
+  z-index: 100;
+  padding: 4rem 1rem 1rem;
+  background-color: black;
+  pointer-events: none;
+  &.active {
+    left: 0;
+    pointer-events: all;
+    z-index: 200;
+  }
+
+  &__title {
+    color: $color-primary;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: flex;
+    font-size: 14px;
+    text-transform: uppercase;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+
+    .icon {
+      color: $color-secondary;
+    }
+  }
+}

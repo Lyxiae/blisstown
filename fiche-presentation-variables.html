@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BLISSTOWN RPG</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="dist/main.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div style="max-width: 780px; width: 100%; margin: 0 auto">
+      `<div class="fiche f-pres ${fichePres.groupe.value}">
+        <div class="fiche__identity-section">
+          <div class="fiche__head">
+            <div class="fiche__name">${fichePres.presNom.value}</div>
+            <div class="fiche__icon-container">
+              <img class="fiche__icon f-pres__icon" src="assets/iris2.png" />
+            </div>
+          </div>
+          <div class="fiche__nickname">${fichePres.presNick.value}</div>
+          <div class="fiche__identity">
+            <div class="fiche__field">
+              <p class="fiche__field-label">Age</p>
+              <p class="fiche__field-content">${fichePres.presAge.value}</p>
+            </div>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Genre</p>
+              <p class="fiche__field-content">${fichePres.presGenre.value}</p>
+            </div>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Origine</p>
+              <p class="fiche__field-content">${fichePres.presOrigine.value}</p>
+            </div>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Métier</p>
+              <p class="fiche__field-content">${fichePres.presMetier.value}</p>
+            </div>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Allégeance</p>
+              <p class="fiche__field-content">${fichePres.presAllegeance.value}</p>
+            </div>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Relation au Bliss</p>
+              <p class="fiche__field-content">${fichePres.presRelBliss.value}</p>
+            </div>
+            <div class="fiche__field--resume f-pres__field--resume">
+              <p class="fiche__field-label">Résumé</p>
+              <p class="fiche__field-content">
+                ${fichePres.presResume.value}
+              </p>
+            </div>
+          </div>
+          <div class="f-pres__physical">
+            <i class="f-pres__physical-icon icon icon--human"></i>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Silhouette</p>
+              <p class="fiche__field-content">${fichePres.presSilhouette.value}</p>
+            </div>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Peau</p>
+              <p class="fiche__field-content">${fichePres.presPeau.value}</p>
+            </div>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Cheveux</p>
+              <p class="fiche__field-content">${fichePres.presCheveux.value}</p>
+            </div>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Yeux</p>
+              <p class="fiche__field-content">
+                ${fichePres.presYeux.value}
+              </p>
+            </div>
+            <div class="fiche__field">
+              <p class="fiche__field-label">Signes distinctifs</p>
+              <p class="fiche__field-content">
+                ${fichePres.presSigne.value}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fiche__section f-pres__char-section">
+          <div class="f-pres__qualificatives">
+            ${champCaractere}
+            <div class="f-pres__adj f-pres__adj--positive">Sympa</div>
+            <div class="f-pres__adj f-pres__adj--negative">Méchante</div>
+            <div class="f-pres__adj f-pres__adj--positive">Sympa</div>
+            <div class="f-pres__adj f-pres__adj--negative">Méchante</div>
+            <div class="f-pres__adj f-pres__adj--positive">Sympa</div>
+            <div class="f-pres__adj f-pres__adj--negative">Méchante</div>
+            <div class="f-pres__adj f-pres__adj--positive">Sympa</div>
+            <div class="f-pres__adj f-pres__adj--negative">Méchante</div>
+            <div class="f-pres__adj f-pres__adj--positive">Sympa</div>
+            <div class="f-pres__adj f-pres__adj--negative">Méchante</div>
+          </div>
+          <div class="f-pres__fields-container">
+            <div class="fiche__field fiche__field--trivia">
+              <p class="fiche__field-label">Trivia</p>
+              <p class="fiche__field-content fiche__field-content--bordered">
+                ${fichePres.presTrivia.value}
+              </p>
+            </div>
+            <div class="fiche__field fiche__field--peurs">
+              <p class="fiche__field-label">Peurs</p>
+              <p class="fiche__field-content fiche__field-content--bordered">
+                ${fichePres.presPeur.value}
+              </p>
+            </div>
+            <div class="fiche__field fiche__field--fiertes">
+              <p class="fiche__field-label">Fiertés</p>
+              <p class="fiche__field-content fiche__field-content--bordered">
+                ${fichePres.presFierte.value}
+              </p>
+            </div>
+            <div class="fiche__field fiche__field--objectif">
+              <p class="fiche__field-label">Objectif(s)</p>
+              <p class="fiche__field-content fiche__field-content--bordered">
+                ${fichePres.presObjectif.value}
+              </p>
+            </div>
+          </div>
+          <div class="f-pres__fields-container">
+            <div class="f-pres__jauges">
+              <div class="f-pres__jauge-block">
+                <div class="f-pres__jauge-labels">
+                  <span class="f-pres__jauge-label">Chaos</span>
+                  <span class="f-pres__jauge-label">Ordre</span>
+                </div>
+                <div class="f-pres__jauge-container">
+                  <div class="f-pres__jauge" style="width: 0"></div>
+                </div>
+              </div>
+              <div class="f-pres__jauge-block">
+                <div class="f-pres__jauge-labels">
+                  <span class="f-pres__jauge-label">Introversion</span>
+                  <span class="f-pres__jauge-label">Extraversion</span>
+                </div>
+                <div class="f-pres__jauge-container">
+                  <div class="f-pres__jauge" style="width: 0"></div>
+                </div>
+              </div>
+              <div class="f-pres__jauge-block">
+                <div class="f-pres__jauge-labels">
+                  <span class="f-pres__jauge-label">Réflexion</span>
+                  <span class="f-pres__jauge-label">Emotion</span>
+                </div>
+                <div class="f-pres__jauge-container">
+                  <div class="f-pres__jauge" style="width: 0"></div>
+                </div>
+              </div>
+              <div class="f-pres__jauge-block">
+                <div class="f-pres__jauge-labels">
+                  <span class="f-pres__jauge-label">Sérieux</span>
+                  <span class="f-pres__jauge-label">Frivolité</span>
+                </div>
+                <div class="f-pres__jauge-container">
+                  <div class="f-pres__jauge" style="width: 0"></div>
+                </div>
+              </div>
+              <div class="f-pres__jauge-block">
+                <div class="f-pres__jauge-labels">
+                  <span class="f-pres__jauge-label">Egocentrisme</span>
+                  <span class="f-pres__jauge-label">Altruisme</span>
+                </div>
+                <div class="f-pres__jauge-container">
+                  <div class="f-pres__jauge" style="width: 0"></div>
+                </div>
+              </div>
+              <div class="f-pres__jauge-block">
+                <div class="f-pres__jauge-labels">
+                  <span class="f-pres__jauge-label">Clairvoyance</span>
+                  <span class="f-pres__jauge-label">Bliss</span>
+                </div>
+                <div class="f-pres__jauge-container">
+                  <div class="f-pres__jauge" style="width: 0"></div>
+                </div>
+              </div>
+            </div>
+            <div class="fiche__field fiche__field--reputation">
+              <p class="fiche__field-label">Réputation & rumeurs</p>
+              <p class="fiche__field-content">
+                <span class="icon icon--chatbox"></span>
+                <span class="f-pres__text"
+                  >${fichePres.presRumeurs.value}</span
+                >
+              </p>
+            </div>
+          </div>
+          <div class="f-pres__fields-wrapper">
+            <div class="fiche__field fiche__field--anecdote">
+              <p class="fiche__field-label">En une anecdote</p>
+              <p class="fiche__field-content fiche__field-content--bordered">
+                ${fichePres.presAnecdote.value}
+              </p>
+            </div>
+            <div class="fiche__field fiche__field--situation">
+              <p class="fiche__field-label">Situation actuelle</p>
+              <p class="fiche__field-content fiche__field-content--bordered">
+                ${fichePres.presSituation.value}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        ${crimeButton.dataset.active === "true" ? `<div class="fiche__section f-pres__add-section">
+          <div class="f-pres__add-title-block">
+            <div class="f-pres__add-title">Crime</div>
+            <div class="f-pres__add-title-info">${fichePres.presCrime.value}</div>
+          </div>
+          <div class="f-pres__add-text">
+            ${fichePres.presCrimeDesc.value}
+          </div>
+        </div>` : '' }
+
+        ${alterationButton.dataset.active === "true" ? `<div class="fiche__section f-pres__add-section">
+          <div class="f-pres__add-title-block">
+            <div class="f-pres__add-title">Alteration</div>
+            <div class="f-pres__add-title-info">${fichePres.presAlterationTitle.value}</div>
+          </div>
+          <div class="f-pres__add-text">
+            ${fichePres.presAlterDesc.value}
+          </div>
+        </div>` : '' }
+
+        <div class="fiche__icon-section townie">
+          <div class="fiche__icon-section-title">${fichePres.presPseudo.value}</div>
+          <div class="fiche__icon-section-icon-block">
+            <img
+              src="${fichePres.presHrpAvatarImg.value}"
+              class="fiche__icon-section-icon"
+            />
+          </div>
+          <div class="fiche__icon-section-text f-pres__icon-section-text">
+            <span class="fiche__question"
+              >Comment avez vous trouvé le forum ?</span
+            >
+            <br />
+            ${fichePres.presHrpQuestion.value}
+          </div>
+        </div>
+      </div>` 
+      
+    </div>
+    <script src="dist/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+@mixin colorAsGroupClass() {
+  .townies & {
+    color: $color-townies !important;
+  }
+  .hellhounds & {
+    color: $color-hellhounds !important;
+  }
+  .cercle & {
+    color: $color-cercle !important;
+  }
+  .llorona & {
+    color: $color-llorona !important;
+  }
+  .jupiter & {
+    color: $color-jupiter !important;
+  }
+  .exiles & {
+    color: $color-exiles !important;
+  }
+}
+
+@mixin colorAsPostGroupClass() {
+  post-townies & {
+    color: $color-townies !important;
+  }
+  .post-hellhounds & {
+    color: $color-hellhounds !important;
+  }
+  .post-cercle & {
+    color: $color-cercle !important;
+  }
+  .post-llorona & {
+    color: $color-llorona !important;
+  }
+  .post-jupiter & {
+    color: $color-jupiter !important;
+  }
+  .post-exiles & {
+    color: $color-exiles !important;
+  }
+}
+
+@mixin colorAsGroupClassSameLevel() {
+  &.townies {
+    color: $color-townies !important;
+  }
+  &.hellhounds {
+    color: $color-hellhounds !important;
+  }
+  &.cercle {
+    color: $color-cercle !important;
+  }
+  &.llorona {
+    color: $color-llorona !important;
+  }
+  &.jupiter {
+    color: $color-jupiter !important;
+  }
+  &.exiles {
+    color: $color-exiles !important;
+  }
+}
+
+@mixin bgColorAsGroupClass() {
+  .townies & {
+    background-color: $color-townies;
+  }
+  .hellhounds & {
+    background-color: $color-hellhounds;
+  }
+  .cercle & {
+    background-color: $color-cercle;
+  }
+  .llorona & {
+    background-color: $color-llorona;
+  }
+  .jupiter & {
+    background-color: $color-jupiter;
+  }
+  .exiles & {
+    background-color: $color-exiles;
+  }
+}
+
+@mixin bgColorAsGroupClassSameLvl() {
+  &.townies {
+    background-color: $color-townies;
+  }
+  &.hellhounds {
+    background-color: $color-hellhounds;
+  }
+  &.cercle {
+    background-color: $color-cercle;
+  }
+  &.llorona {
+    background-color: $color-llorona;
+  }
+  &.jupiter {
+    background-color: $color-jupiter;
+  }
+  &.exiles {
+    background-color: $color-exiles;
+  }
+}
+
+@mixin bgColorAsPostGroupClass() {
+  .post-townies & {
+    background-color: $color-townies;
+  }
+  .post-hellhounds & {
+    background-color: $color-hellhounds;
+  }
+  .post-cercle & {
+    background-color: $color-cercle;
+  }
+  .post-llorona & {
+    background-color: $color-llorona;
+  }
+  .post-jupiter & {
+    background-color: $color-jupiter;
+  }
+  .post-exiles & {
+    background-color: $color-exiles;
+  }
+}
+
+@mixin bgFilterAsGroupClass() {
+  .townies & {
+    background-color: transparentize($color-townies, 0.9);
+  }
+  .hellhounds & {
+    background-color: transparentize($color-hellhounds, 0.9);
+  }
+  .cercle & {
+    background-color: transparentize($color-cercle, 0.9);
+  }
+  .llorona & {
+    background-color: transparentize($color-llorona, 0.9);
+  }
+  .jupiter & {
+    background-color: transparentize($color-jupiter, 0.9);
+  }
+  .exiles & {
+    background-color: transparentize($color-exiles, 0.9);
+  }
+}
+
+@mixin bgGradientAsGroupClass() {
+  .townies & {
+    background: $gradient-townies;
+  }
+  .hellhounds & {
+    background: $gradient-hellhounds;
+  }
+  .cercle & {
+    background: $gradient-cercle;
+  }
+  .llorona & {
+    background: $gradient-llorona;
+  }
+  .jupiter & {
+    background: $gradient-jupiter;
+  }
+  .exiles & {
+    background: $gradient-exiles;
+  }
+}
+
+@mixin bgPrezGradientAsGroupClass() {
+  .townies & {
+    background: $gradient-townies-vert;
+  }
+  .hellhounds & {
+    background: $gradient-hellhounds-vert;
+  }
+  .cercle & {
+    background: $gradient-cercle-vert;
+  }
+  .llorona & {
+    background: $gradient-llorona-vert;
+  }
+  .jupiter & {
+    background: $gradient-jupiter-vert;
+  }
+  .exiles & {
+    background: $gradient-exiles-vert;
+  }
+}
+
+@mixin bgGradientAsPostGroupClass() {
+  .post-townies & {
+    background: $gradient-townies;
+  }
+  .post-hellhounds & {
+    background: $gradient-hellhounds;
+  }
+  .post-cercle & {
+    background: $gradient-cercle;
+  }
+  .post-llorona & {
+    background: $gradient-llorona;
+  }
+  .post-jupiter & {
+    background: $gradient-jupiter;
+  }
+  .post-exiles & {
+    background: $gradient-exiles;
+  }
+}
+
+@mixin borderColorAsGroupClass() {
+  .townies & {
+    border-color: $color-townies;
+  }
+  .hellhounds & {
+    border-color: $color-hellhounds;
+  }
+  .cercle  {
+    border-color: $color-cercle;
+  }
+  .llorona & {
+    border-color: $color-llorona;
+  }
+  .jupiter & {
+    border-color: $color-jupiter;
+  }
+  .exiles & {
+    border-color: $color-exiles;
+  }
+}
+
+@mixin borderColorAsPostGroupClass() {
+  .post-townies & {
+    border-color: $color-townies;
+  }
+  .post-hellhounds & {
+    border-color: $color-hellhounds;
+  }
+  .post-cercle  {
+    border-color: $color-cercle;
+  }
+  .post-llorona & {
+    border-color: $color-llorona;
+  }
+  .post-jupiter & {
+    border-color: $color-jupiter;
+  }
+  .post-exiles & {
+    border-color: $color-exiles;
+  }
+}

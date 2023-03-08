@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BLISSTOWN RPG</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <link rel="stylesheet" href="dist/main.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="form-page">
+        <div class="form-pres__title">Fiche de présentation</div>
+      <div class="form-pres">
+          <form id="carnetBord" class="form" action="/posting.forum" method="post" name="fichePres" enctype="multipart/form-data"
+              target="_blank" onSubmit="creationMessage(this)">
+
+              <input type="hidden" name="mode" value="newtopic" />
+              <input type="hidden" name="topictype" value="0" checked="checked" />
+              <input type="hidden" name="message" value="" />
+              <input type="hidden" name="f" value="11" />
+
+              <!-- Faction -->
+              <div class="form__form-group form-pres__select">
+                  <label>Faction</label>
+                  <select name="groupe" class="form__select" id="groupe-select">
+                      <option value="jupiter">Jupiter</option>
+                      <option value="hellhounds">Hellhounds</option>
+                      <option value="llorona">La Llorona</option>
+                      <option value="cercle">Le Cercle</option>
+                      <option value="exiles">Exilés</option>
+                      <option value="townies">Blisstownies</option>
+                  </select>
+              </div>
+              <div class="form-pres__secondary-title">
+                Identité
+            </div>
+
+              <!-- TITRE -->
+              <div class="form__form-group form-pres__titre-sujet"> <label for="Titre">Titre</label><br />
+                  <input type="text" name="subject" id="titre" value="" /></div>
+
+              <div class="form-pres__feat-section">
+                  <!-- ICONE -->
+                  <div class="form__form-group"><label for="presAvatarImg">Lien de l'icone</label><br />
+                      <input id="presAvatarImg" name="presAvatarImg" value="" type="text"></input></div>
+              </div>
+
+              <div class="form-pres__pres-id">
+
+                  <!-- Prénom et Nom -->
+                  <div class="form__form-group form-pres__nom"><label for="Nom">Prénom(s) et Nom</label><br />
+                      <input id="presNom" name="presNom" value="" type="text"></input></div>
+                
+                      <div class="form__form-group"><label for="nickname">Surnom(s)</label><br />
+                        <input id="presNick" name="presNick" value="" type="text"></input></div>
+                  <!-- Age -->
+                  <div class="form__form-group">
+                    <label for="Age">Age</label><br />
+                    <input id="presAge" name="presAge" value="" type="text"></input>
+                </div>
+                <!-- Genre -->
+                <div class="form__form-group">
+                    <label for="Genre">Genre</label><br />
+                    <input id="presGenre" name="presGenre" value="" type="text"></input>
+                </div>
+                  <!-- Origine -->
+                  <div class="form__form-group"><label for="Origine">Origine</label><br />
+                      <input id="presOrigine" name="presOrigine" value="" type="text"></input>
+                      <p class="form__input-infos">La ville / le pays d'origine, pour savoir si votre personnage est Townie de naissance ou venu de l'extérieur.</p>
+                  </div>
+                  <!-- Métier -->
+                  <div class="form__form-group"><label for="Metier">Métier</label><br />
+                    <input id="presMetier" name="presMetier" value="" type="text"></input>
+                </div>
+                  <!-- Allégeance -->
+                <div class="form__form-group"><label for="Allégeance">Allégeance</label><br />
+                    <input id="presAllegeance" name="presAllegeance" value="" type="text"></input>
+                    <p class="form__input-infos">Votre personnage appartient-il à un groupe, une faction (secrète ou non) ?</p>
+                </div>  
+                <!-- Relation au Bliss -->
+                <div class="form__form-group"><label for="RelationBliss">Relation au Bliss</label><br />
+                    <input id="presRelBliss" name="presRelBliss" value="" type="text"></input>
+                </div>  
+                <!-- Résumé -->
+                <div class="form__form-group form__form-group--textarea"><label for="presResume">Résumé</label>
+                    <textarea name="presResume" id="presResume"></textarea>
+                    <p class="form__input-infos">Un résumé succinct de votre personnage, en quelques courtes lignes.</p>
+                </div>
+
+                <div class="form-pres__secondary-title">
+                    Un simple coup d'oeil
+                </div>
+                  <!-- Taille -->
+                <div class="form__form-group"><label for="Silhouette">Silhouette</label><br />
+                    <input id="presSilhouette" name="presSilhouette" value="" type="text"></input>
+                </div>
+                  <!-- Corpulence -->
+                <div class="form__form-group"><label for="Peau">Peau</label><br />
+                    <input id="presPeau" name="presPeau" value="" type="text"></input>
+                </div>
+                  <!-- Cheveux -->
+                <div class="form__form-group"><label for="Cheveux">Cheveux</label><br />
+                    <input id="presCheveux" name="presCheveux" value="" type="text"></input>
+                </div>
+                  <!-- Yeux -->
+                <div class="form__form-group"><label for="Yeux">Yeux</label><br />
+                      <input id="presYeux" name="presYeux" value="" type="text"></input>
+                </div>
+                <div class="form__form-group form__form-group--textarea form-pres__signes">
+                        <!-- Signes Distinctifs -->
+                        <div class="form__form-group form__form-group--textarea"><label for="presSigne">Signes distinctifs</label><br />
+                            <textarea name="presSigne" id="presSigne"></textarea></div>
+      
+            </div>
+            </div>
+              
+              <div class="form-section">
+                  <div class="form-pres__secondary-title">
+                      Caractère
+                  </div>
+                  <div class="form-pres__text">
+                      Vous pouvez mettre jusqu'à 5 qualités et 5 défauts principaux. Vous n'êtes pas obligés de remplir
+                      les 5 champs.
+                  </div>
+                  <div class="form-pres__traits">
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait1">Qualité 1</label><br />
+                          <input id="presTrait1" name="presTrait1" class="quali" value="" type="text"></input>
+                      </div>
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait2">Qualité 2</label><br />
+                          <input id="presTrait2" name="presTrait2" class="quali" value="" type="text"></input>
+                      </div>
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait3">Qualité 3</label><br />
+                          <input id="presTrait3" name="presTrait3" class="quali" value="" type="text"></input>
+                      </div>
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait4">Qualité 4</label><br />
+                          <input id="presTrait4" name="presTrait4" class="quali" value="" type="text"></input>
+                      </div>
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait5">Qualité 5</label><br />
+                          <input id="presTrait5" name="presTrait5" class="quali" value="" type="text"></input>
+                      </div>
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait6">Défaut 1</label><br />
+                          <input id="presTrait6" name="presTrait6" class="defaut" value="" type="text"></input>
+                      </div>
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait7">Défaut 2</label><br />
+                          <input id="presTrait7" name="presTrait7" class="defaut" value="" type="text"></input>
+                      </div>
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait8">Défaut 3</label><br />
+                          <input id="presTrait8" name="presTrait8" class="defaut" value="" type="text"></input>
+                      </div>
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait9">Défaut 4</label><br />
+                          <input id="presTrait9" name="presTrait9" class="defaut" value="" type="text"></input>
+                      </div>
+                      <!-- Traits caractère -->
+                      <div class="form__form-group"><label for="Trait10">Défaut 5</label><br />
+                          <input id="presTrait10" name="presTrait10" class="defaut" value="" type="text"></input>
+                      </div>
+                  </div>
+              </div>
+
+
+              <!-- Jauges -->
+              <div class="form-pres__jauges">
+                <div class="form-pres__secondary-title">
+                    Tendances
+                </div>
+                <div class="form-pres__text">
+                    Déplacez les curseur sur les jauges pour déterminer où se positionne votre personnage sur l'axe. L'axe "Clairvoyance - Bliss" sert à déterminer le niveau d'influence du Bliss sur votre personnage ainsi que son intérêt pour lui. Par exemple, un personnage d'Exilé non-altéré sera plus facilement Clairvoyant et un Elu du Bliss Altéré sera plus proche du Bliss.
+                </div>
+                  <div class="form__form-group ranges">
+                      <span class="range-label start-axis">Chaos</span><input id="presOrdre" name="presOrdre" value=""
+                          type="range"></input><span class="range-label end-axis">Ordre</span></div>
+
+                  <div class="form__form-group ranges">
+                      <span class="range-label start-axis">Introversion</span><input id="presIntroversion"
+                          name="presIntroversion" value="" type="range"></input><span
+                          class="range-label end-axis">Extraversion</span></div>
+
+                  <div class="form__form-group ranges">
+                      <span class="range-label start-axis">Réflexion</span><input id="presEmotion" name="presEmotion"
+                          value="" type="range"></input><span class="range-label end-axis">Émotion</span></div>
+
+                  <div class="form__form-group ranges">
+                      <span class="range-label start-axis">Sérieux</span><input id="presSerieux" name="presSerieux"
+                          value="" type="range"></input><span class="range-label end-axis">Frivolité</span></div>
+
+                  <div class="form__form-group ranges">
+                      <span class="range-label start-axis">Égocentrisme</span><input id="presAltruisme"
+                          name="presAltruisme" value="" type="range"></input><span
+                          class="range-label end-axis">Altruisme</span></div>
+                          <div class="form__form-group ranges">
+                              <span class="range-label start-axis">Clairvoyance</span><input id="presBliss"
+                                  name="presBliss" value="" type="range"></input><span
+                                  class="range-label end-axis">Bliss</span></div>
+
+              </div>
+
+
+              <div class="form-pres__secondary-title">
+                  En savoir plus sur mon personnage
+              </div>
+              <div class="form-pres__text">
+                  Dans ces champs, vous pouvez ajouter des détails sur votre personnage. Faits et anecdotes sur ses
+                  goûts, ses habitudes, ses objectifs. Détails sur sa situation actuelle, ce pour quoi il est connu ou
+                  reconnu en ville.
+                  <strong>Vous n'êtes pas tenus de beaucoup écrire</strong>, l'important est de poser les informations importantes pour
+                  votre concept.
+              </div>
+              <div class="form-pres__text-inputs">
+                  <div class="form__form-group form__form-group--textarea trivia"><label for="presTrivia">Trivia</label><br />
+                      <textarea name="presTrivia" id="presTrivia"></textarea>
+                      <p class="form__input-infos">Des goûts singuliers, des petites choses à savoir sur votre personnage, des habitudes étranges ...</p>
+                    </div>
+
+                <div class="form__add-grid">
+                    <div class="form__form-group form__form-group--textarea society"><label for="presPeur">Peur(s)</label>
+                      <textarea name="presPeur" id="presPeur"></textarea>
+                    </div>
+                    <div class="form__form-group form__form-group--textarea society"><label for="presFierte">Fierté(s)</label>
+                        <textarea name="presFierte" id="presFierte"></textarea>
+                    </div>
+                    
+                    
+                    <div class="form__form-group form__form-group--textarea society"><label for="presObjectif">Objectif(s)</label>
+                        <textarea name="presObjectif" id="presObjectif"></textarea>
+                    </div>
+
+                    <div class="form__form-group form__form-group--textarea"><label for="presRumeurs">Réputation et rumeurs</label><br />
+                        <textarea name="presRumeurs" id="presRumeurs"></textarea>
+                    </div>
+                </div>
+                  <div class="form__form-group form__form-group--textarea situact"><label for="presAnecdote">Anecdote </label><br />
+                    <textarea name="presAnecdote" id="presAnecdote"></textarea></div>
+
+                    <div class="form__form-group form__form-group--textarea situact"><label for="presSituation">Situation actuelle </label><br />
+                        <textarea name="presSituation" id="presSituation"></textarea></div>
+              </div>
+
+              <div class="form-pres__secondary-title">
+                Sections additionnelles
+            </div>
+            <div class="form-pres__text">
+                Si votre personnage est un criminel condamné à purger sa peine à BlissTown, cliquez sur "mon personnage est un condamné" pour afficher la section "Crime". Si votre personnage est un altéré, cliquez sur "Mon personnage est un altéré" pour ajouter la section liée à la description de votre altération. Si vous souhaitez laisser le choix de l'altération au Staff, vous pouvez simplement le noter dans les champs prévus.
+            </div>
+
+              <a class="form-button button button--primary-outline form-button--add-section" data-section="crime" data-active="false"><span class="form__add-section">+</span>  Mon personnage est un condamné</a>
+
+              <div class="form-section form-section--crime form-section--hidden">
+                <div class="form__form-group">
+                    <label for="Crime">Intitulé du crime</label><br />
+                    <input id="presCrime" name="presCrime" value="" type="text"></input>
+                    <p class="form__input-infos">Le type de crime/délit (défini dans le dossier de votre personnage, qu'il soit coupable ou non).</p>
+                </div>
+
+                <div class="form__form-group form__form-group--textarea crimeDesc"><label for="presCrimeDesc">Informations</label><br />
+                    <textarea name="presCrimeDesc" id="presCrimeDesc"></textarea>
+                    <p class="form__input-infos">Vous pouvez développer le contexte, comment s'est passé la condamnation, préciser la durée, etc. <u>Pas de description détaillée d'actes criminels, gore, etc.</u></p>
+                </div>
+
+                <a class="form-button button button--primary-outline form-button--remove-section" data-section="crime" data-active="false"><span class="form__add-section">X</span> Revenir dans le droit chemin</a>
+                
+              </div>
+              <a class="form-button button button--primary-outline form-button--add-section" data-section="alteration" data-active="false"><span class="form__add-section">+</span> Mon personnage est un altéré</a>
+
+              <div class="form-section form-section--alteration form-section--hidden">
+                <div class="form__form-group">
+                    <label for="AlterationTitle">Intitulé de l'altération</label><br />
+                    <input id="presAlterationTitle" name="presAlterationTitle" value="" type="text"></input>
+                    <p class="form__input-infos">Le type ou le nom inventé pour votre altération.</p>
+                </div>
+
+                <div class="form__form-group form__form-group--textarea alterDesc"><label for="presAlterDesc">Description de l'altération</label><br />
+                    <textarea name="presAlterDesc" id="presAlterDesc"></textarea>
+                    <p class="form__input-infos">Vous pouvez décrire ici le fonctionnement, l'origine et les limites de l'altération de votre personnage. N'oubliez pas de lier sa nature à votre personnage (lien au caractère, au vécu, etc)</p>
+                </div>
+                <a class="form-button button button--primary-outline form-button--remove-section" data-section="alteration" data-active="false"><span class="form__add-section">X</span> Redevenir "normal"</a>
+              </div>
+              
+
+
+              <div class="form-section">
+                  <div class="form-pres__secondary-title">
+                      Hors Jeu
+                  </div>
+                  <div class="form-pres__text">
+                      Pour en savoir plus sur vous, le joueur.
+                  </div>
+                  <div class="form-pres__pres-hrp">
+                      <div class="form__form-group"><label for="presPseudo">Pseudo</label><br />
+                          <input id="presPseudo" name="presPseudo" value="" type="text"></input></div>
+                          <div class="form__form-group"><label for="presHrpAvatarImg">Lien de l'icone</label><br />
+                            <input id="presHrpAvatarImg" name="presHrpAvatarImg" value="" type="text"></input></div>
+  
+                      <div class="form__form-group form__form-group form__form-group--textarea"><label for="presHrpQuestion">Comment avez vous connu le
+                              forum
+                              ?</label><br />
+                          <textarea name="presHrpQuestion" id="presHrpQuestion"></textarea></div>
+                  </div>
+              </div>
+              
+              <div class="form-pres__buttons">
+                  <input type="reset" class="button1" name="reseta" value="Réinitialiser" />
+                  <input name="preview" value="Prévisualiser" tabindex="5" class="button1" type="submit" />
+
+                  <input type="submit" class="button button--primary" name="post" value="Poster la fiche" />
+              </div>
+          </form>
+      </div>
+  </main>
+  <!-- Scripts -->
+  <script src="src/js/external/pres-form.js" async defer></script>
+  </body>
+</html>

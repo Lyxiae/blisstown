@@ -1,0 +1,338 @@
+.fiche {
+  border-radius: 6px;
+  overflow: hidden;
+
+  &__section {
+    &--chrono {
+      margin: 1rem 0;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+  }
+
+  &__chrono {
+    padding: 1rem;
+    background: #060606;
+    font-size: 14px;
+  }
+
+  &__head {
+    display: flex;
+    position: relative;
+    grid-column: span 2;
+  }
+  &__name {
+    width: 100%;
+    background-color: $color-black;
+    background-image: url("../../assets/dots-motif.jpg");
+    background-repeat: repeat;
+    background-size: 20px 20px;
+    border-bottom: 1px solid;
+    min-height: 70px;
+    padding: 1rem 8.5rem 1rem 1rem;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: $font-sans-title;
+    @include colorAsGroupClass();
+
+    @include breakpoint(1024px) {
+      font-size: 30px;
+    }
+  }
+
+  &__icon-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    @include bgColorAsGroupClass();
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 3;
+  }
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__nickname {
+    padding: 4px 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-style: italic;
+    grid-column: span 2;
+    padding-right: 160px;
+    @include colorAsGroupClass();
+    font-weight: 600;
+    font-family: $font-sans-title;
+  }
+
+  &__identity-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  &__idblock {
+    display: flex;
+    flex-direction: column;
+    gap: 0 1rem;
+    padding: 0 0 1rem;
+    height: 100%;
+    @include bgPrezGradientAsGroupClass();
+    @include breakpoint(1200px) {
+      display: grid;
+      grid-template-columns: 1.75fr 1fr;
+    }
+  }
+
+  &__identity {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    height: 100%;
+
+    @include breakpoint(768px) {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: min-content;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+
+    &--resume {
+      grid-column: span 2;
+    }
+
+    &--trivia {
+      grid-column: span 2;
+    }
+
+    &--objectif {
+      grid-column: span 2;
+    }
+
+    &--anecdote {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__field-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+    font-family: $font-sans-title;
+
+    margin-bottom: 0;
+    line-height: 1;
+    display: flex;
+    position: relative;
+    @include colorAsGroupClass();
+
+    .fiche__identity &,
+    .f-carnet & {
+      padding-left: 0.5rem;
+      margin-left: 0 !important;
+    }
+
+    .f-pres__physical & {
+      text-align: right;
+      margin-bottom: 6px;
+    }
+
+    .f-pres__char-section & {
+      border-bottom: 1px solid;
+      padding: 0.5rem;
+      margin-left: 2rem;
+      margin-right: 0.35rem;
+
+      &::before {
+        @extend %icon;
+        position: absolute;
+        left: -1.5rem;
+        top: 50%;
+        font-size: 1.25rem;
+        transform: translateY(-50%);
+      }
+    }
+
+    .fiche__field--reputation & {
+      margin-left: 0;
+      padding-left: 0;
+      &::before {
+        display: none;
+      }
+    }
+    .fiche__field--trivia & {
+      &::before {
+        @extend %icon--questionmark;
+      }
+    }
+
+    .fiche__field--peurs & {
+      &::before {
+        @extend %icon--bolt;
+      }
+    }
+
+    .fiche__field--fiertes & {
+      &::before {
+        @extend %icon--thumbs-up;
+      }
+    }
+
+    .fiche__field--objectif & {
+      &::before {
+        @extend %icon--target;
+      }
+    }
+
+    .fiche__field--anecdote & {
+      &::before {
+        @extend %icon--feather;
+      }
+    }
+
+    .fiche__field--situation & {
+      &::before {
+        @extend %icon--time;
+      }
+    }
+  }
+
+  &__field-content {
+    border-radius: 6px;
+    min-height: 24px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    br {
+      display: initial !important;
+    }
+    .f-pres__identity & {
+      background-color: black;
+      
+    }
+
+    .f-pres__physical & {
+      &:last-of-type {
+        overflow: auto;
+        max-height: 100px;
+      }
+    }
+    .ressoc & {
+      background-color: $color-bunker;
+    }
+
+    .ressoc & {
+      padding: 1rem;
+    }
+
+    .f-pres__char-section & {
+      font-size: 14px;
+      padding: 1.15rem !important;
+    }
+
+    .f-pres__field--resume & {
+      max-height: 200px;
+      overflow: auto;
+    }
+
+    .fiche__field--reputation & {
+      border: 1px solid $color-bunker;
+
+      .icon--chatbox {
+        position: absolute;
+        @include colorAsGroupClass();
+        font-size: 120px;
+        opacity: 0.2;
+        top: 2rem;
+        right: 1rem;
+      }
+    }
+  }
+
+  &__icon-section {
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 1rem;
+    position: relative;
+  }
+
+  &__icon-section-title {
+    width: 100%;
+    min-height: 70px;
+    padding: 1rem 1rem 1rem 8.5rem;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    line-height: 1;
+    font-size: 20px;
+    font-weight: bold;
+    background-image: url("../../assets/dots-motif.jpg");
+    background-repeat: repeat;
+    background-size: 20px 20px;
+    border-bottom: 1px solid;
+    text-transform: uppercase;
+    justify-content: flex-end;
+    @include colorAsGroupClass();
+
+    @include breakpoint(1024px) {
+      font-size: 30px;
+    }
+  }
+
+  &__icon-section-icon-block {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    @include bgColorAsGroupClass();
+    padding: 10px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 3;
+  }
+
+  &__icon-section-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__icon-section-text {
+    @include bgPrezGradientAsGroupClass();
+    padding: 1rem 1rem 1rem 8.5rem;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 14px;
+  }
+
+  &__question {
+    text-align: right;
+    @include colorAsGroupClass();
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
