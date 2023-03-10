@@ -5,6 +5,10 @@
     @extend %main-container;
   }
 
+  #preview {
+    padding: 3rem;
+  }
+
   &__panel {
     background-color: black;
     border-radius: 6px;
