@@ -1062,7 +1062,7 @@ $forum-content-size: 435px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
+    height: 80px;
     background-color: black;
     span {
       position: relative;
@@ -1076,6 +1076,10 @@ $forum-content-size: 435px;
       #{$block-selector}__category-btn-img {
         opacity: 1;
       }
+    }
+
+    &:last-of-type {
+      grid-column: span 2;
     }
   }
 

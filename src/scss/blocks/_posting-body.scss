@@ -7,6 +7,10 @@
 
   #preview {
     padding: 3rem;
+
+    h3 {
+      @extend .title--m;
+    }
   }
 
   &__panel {
