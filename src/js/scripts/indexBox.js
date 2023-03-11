@@ -14,6 +14,7 @@ class IndexBox {
       <div class="forum__description-links">
         <a href="https://lyxiae.com/blisstown/guide.html" class="button button--primary-plain">Guide</a>
         <a href="https://blisstown.forumactif.com/h1-listings" class="button button--secondary-plain">Avatars & Masterlist</a>
+        <a href="https://blisstown.forumactif.com/t43-progression#66" class="button button--secondary-plain">Progression de l'intrigue</a>
       </div>
     </div>`;
     if (target) {

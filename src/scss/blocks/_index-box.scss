@@ -1074,7 +1074,7 @@ $forum-content-size: 435px;
 
     &:hover {
       #{$block-selector}__category-btn-img {
-        opacity: 1;
+        filter: brightness(1.2);
       }
     }
 
@@ -1090,7 +1090,7 @@ $forum-content-size: 435px;
     top: 0;
     left: 0;
     object-fit: cover;
-    opacity: 0.65;
+    transition: filter 0.3s;
   }
 }
 
