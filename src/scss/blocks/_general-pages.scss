@@ -1,8 +1,8 @@
 .agreement {
-  padding: 1.5rem;
+  @extend %main-container;
 
   &__container {
-    @extend %main-container;
+
     padding: 3rem;
     font-size: 14px;
     background-color: black;
