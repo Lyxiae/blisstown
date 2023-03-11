@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BLISSTOWN RPG</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <link rel="stylesheet" href="dist/main.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="form-page">
+        <div class="form-pres__title">Fiche de présentation</div>
+      <div class="form-pres">
+          <form id="fichePres" class="form" action="/posting.forum" method="post" name="fichePres" enctype="multipart/form-data"
+              target="_blank" onSubmit="creationMessage(this)">
+
+              <input type="hidden" name="mode" value="newtopic" />
+              <input type="hidden" name="topictype" value="0" checked="checked" />
+              <input type="hidden" name="message" value="" />
+              <input type="hidden" name="f" value="11" />
+
+              <div class="form-pres__secondary-title">
+                Identité
+            </div>
+
+              <!-- TITRE -->
+              <div class="form__form-group form-pres__titre-sujet"> <label for="Titre">Titre</label><br />
+                  <input type="text" name="subject" id="titre" value="" /></div>
+
+              <div class="form-pres__feat-section">
+                  <!-- ICONE -->
+                  <div class="form__form-group"><label for="resIconImg">Lien de l'icone</label><br />
+                      <input id="resIconImg" name="resIconImg" value="" type="text"></input></div>
+                  <div class="form__form-group"><label for="resBannerImg">Lien de la bannière</label><br />
+                      <input id="resBannerImg" name="resBannerImg" value="" type="text"></input></div>
+              </div>
+
+              <div class="form-pres__pres-id">
+
+                  <!-- Prénom et Nom -->
+                  <div class="form__form-group form-pres__nom"><label for="resPseudo">Pseudo</label><br />
+                      <input id="resPseudo" name="resPseudo" value="" type="text"></input></div>
+                
+                      <div class="form__form-group"><label for="resHandle">Handle/Tag</label><br />
+                        <input id="resHandle" name="resHandle" value="" type="text"></input></div>
+                  <!-- Stat Abonnementss -->
+                  <div class="form__form-group">
+                    <label for="resAbonnements">Abonnements</label><br />
+                    <input id="resAbonnements" name="resAbonnements" value="" type="text"></input>
+                </div>
+                <!-- Stat Abonnés -->
+                <div class="form__form-group">
+                    <label for="resAbos">Abonnés</label><br />
+                    <input id="resAbos" name="resAbos" value="" type="text"></input>
+                </div>
+                  <!-- Origine -->
+                  <div class="form__form-group"><label for="resPosts">Posts/Tweets</label><br />
+                      <input id="resPosts" name="resPosts" value="" type="text"></input>
+                      <p class="form__input-infos">N'oubliez pas de préciser le type de messages (tweets, posts, etc).</p>
+                  </div>
+                  <!-- Métier -->
+                  <div class="form__form-group"><label for="resLikes">Likes</label><br />
+                    <input id="resLikes" name="resLikes" value="" type="text"></input>
+                </div>
+                <!-- Résumé -->
+                <div class="form__form-group form__form-group--textarea"><label for="resBio">Bio</label>
+                    <textarea name="resBio" id="resBio"></textarea>
+                    <p class="form__input-infos">La bio de votre compte.</p>
+                </div>
+      
+            </div>
+          <div class="form-pres__feat-section">
+              <!-- ICONE -->
+              <div class="form__form-group"><label for="resImg1">Image décorative 1</label><br />
+                  <input id="resImg1" name="resImg1" value="" type="text"></input></div>
+              <div class="form__form-group"><label for="resImg2">Image décorative 2</label><br />
+                  <input id="resImg2" name="resImg2" value="" type="text"></input></div>
+              <div class="form__form-group"><label for="resImg1">Image décorative 3</label><br />
+                  <input id="resImg3" name="resImg3" value="" type="text"></input></div>
+              <div class="form__form-group"><label for="resImg1">Image décorative 4</label><br />
+                  <input id="resImg4" name="resImg4" value="" type="text"></input></div>
+
+          </div>
+              
+              <div class="form-pres__buttons">
+                  <input type="reset" class="button1" name="reseta" value="Réinitialiser" />
+                  <input name="preview" value="Prévisualiser" tabindex="5" class="button1" type="submit" />
+
+                  <input type="submit" class="button button--primary" name="post" value="Poster la fiche" />
+              </div>
+          </form>
+      </div>
+  </main>
+  <!-- Scripts -->
+  <script src="src/js/external/reseaux-form.js" async defer></script>
+  </body>
+</html>
