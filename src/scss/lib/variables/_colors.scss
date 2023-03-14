@@ -44,6 +44,8 @@ $color-bunker: #090f11;
 $color-pearl-black: #020f0b;
 $color-text: #b3b3b3;
 $color-mid-grey: #757575;
+$color-baltic-sea: #1d1b1f;
+$color-baltic-sea-darker: darken($color-baltic-sea, 2%);
 
 // GROUPS COLORS
 $color-cercle: #9747ff;
@@ -79,7 +81,11 @@ $color-default-link: $color-secondary;
 
 // ## Misc
 //GRADIENT
-$gradient-darken: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+$gradient-darken: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0, 0, 0, 0.5) 100%
+);
 $gradient-primary-horizontal: linear-gradient(
   90deg,
   rgba(219, 39, 72, 1) 0%,
@@ -139,12 +145,12 @@ $gradient-townies-vert: linear-gradient(
 
 $gradient-jupiter-vert: linear-gradient(
   180deg,
-  transparentize($color-jupiter, 0.70) 0%,
+  transparentize($color-jupiter, 0.7) 0%,
   transparentize($color-jupiter, 1) 50%
 );
 $gradient-cercle-vert: linear-gradient(
   180deg,
-  transparentize($color-cercle, 0.70) 0%,
+  transparentize($color-cercle, 0.7) 0%,
   transparentize($color-cercle, 1) 50%
 );
 $gradient-llorona-vert: linear-gradient(
@@ -154,11 +160,11 @@ $gradient-llorona-vert: linear-gradient(
 );
 $gradient-exiles-vert: linear-gradient(
   180deg,
-  transparentize($color-exiles, 0.70) 0%,
+  transparentize($color-exiles, 0.7) 0%,
   transparentize($color-exiles, 1) 50%
 );
 $gradient-hellhounds-vert: linear-gradient(
   180deg,
-  transparentize($color-hellhounds, 0.70) 0%,
+  transparentize($color-hellhounds, 0.7) 0%,
   transparentize($color-hellhounds, 1) 50%
 );
