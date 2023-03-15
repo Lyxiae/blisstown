@@ -1,4 +1,7 @@
 @mixin colorAsGroupClass() {
+  .bliss & {
+    color: $color-secondary !important;
+  }
   .townies & {
     color: $color-townies !important;
   }
@@ -20,7 +23,10 @@
 }
 
 @mixin colorAsPostGroupClass() {
-  post-townies & {
+  .post-bliss & {
+    color: $color-secondary !important;
+  }
+  .post-townies & {
     color: $color-townies !important;
   }
   .post-hellhounds & {
@@ -41,6 +47,9 @@
 }
 
 @mixin colorAsGroupClassSameLevel() {
+  &.bliss {
+    color: $color-secondary !important;
+  }
   &.townies {
     color: $color-townies !important;
   }
@@ -62,6 +71,9 @@
 }
 
 @mixin bgColorAsGroupClass() {
+  .bliss & {
+    background-color: $color-secondary;
+  }
   .townies & {
     background-color: $color-townies;
   }
@@ -83,6 +95,9 @@
 }
 
 @mixin bgColorAsGroupClassSameLvl() {
+  &.bliss {
+    background-color: $color-secondary;
+  }
   &.townies {
     background-color: $color-townies;
   }
@@ -104,6 +119,9 @@
 }
 
 @mixin bgColorAsPostGroupClass() {
+  .post-bliss & {
+    background-color: $color-secondary;
+  }
   .post-townies & {
     background-color: $color-townies;
   }
@@ -125,6 +143,9 @@
 }
 
 @mixin bgFilterAsGroupClass() {
+  .bliss & {
+    background-color: transparentize($color-secondary, 0.9);
+  }
   .townies & {
     background-color: transparentize($color-townies, 0.9);
   }
@@ -146,6 +167,9 @@
 }
 
 @mixin bgGradientAsGroupClass() {
+  .bliss & {
+    background: $gradient-secondary-horizontal;
+  }
   .townies & {
     background: $gradient-townies;
   }
@@ -167,6 +191,9 @@
 }
 
 @mixin bgPrezGradientAsGroupClass() {
+  .bliss & {
+    background: $gradient-bliss-vert;
+  }
   .townies & {
     background: $gradient-townies-vert;
   }
@@ -188,6 +215,9 @@
 }
 
 @mixin bgGradientAsPostGroupClass() {
+  .post-bliss & {
+    background: $gradient-secondary-horizontal;
+  }
   .post-townies & {
     background: $gradient-townies;
   }
@@ -209,6 +239,9 @@
 }
 
 @mixin borderColorAsGroupClass() {
+  .bliss & {
+    border-color: $color-secondary;
+  }
   .townies & {
     border-color: $color-townies;
   }
@@ -230,6 +263,9 @@
 }
 
 @mixin borderColorAsPostGroupClass() {
+  .post-bliss & {
+    border-color: $color-secondary;
+  }
   .post-townies & {
     border-color: $color-townies;
   }

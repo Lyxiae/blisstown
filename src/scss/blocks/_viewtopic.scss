@@ -144,6 +144,7 @@
       top: 50%;
       transform: translate(50%, -50%);
       border-radius: 50%;
+      mix-blend-mode: screen;
     }
     .post-townies & {
       &::before {
@@ -189,7 +190,7 @@
   }
 
   &__post-main {
-    background: darken($color-baltic-sea, 5%);
+    background: darken($color-baltic-sea, 6%);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 40px auto 60px auto;
@@ -418,7 +419,7 @@
   }
 
   &__post-body {
-    background-color: $color-baltic-sea;
+    background-color: darken($color-baltic-sea, 10%);
     border-radius: 6px;
     padding: 3rem;
     font-size: 15px;
@@ -481,7 +482,7 @@
       width: 40px;
       height: 40px;
       font-size: 18px;
-      background-color: $color-baltic-sea-darker;
+      background-color: black;
     }
   }
 
@@ -567,7 +568,7 @@
   @include colorAsPostGroupClass();
   $this: ".topic-profile-field";
   margin: 1rem 0;
-  background: $color-baltic-sea;
+  background: darken($color-baltic-sea, 10%);
   border-radius: 6px;
   position: relative;
   min-height: 110px;

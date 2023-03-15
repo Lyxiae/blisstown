@@ -137,6 +137,11 @@ $gradient-hellhounds: linear-gradient(
 );
 
 // VERTICAL TO BLACK
+$gradient-bliss-vert: linear-gradient(
+  180deg,
+  transparentize($color-secondary, 0.65) 0%,
+  transparentize($color-secondary, 1) 50%
+);
 $gradient-townies-vert: linear-gradient(
   180deg,
   transparentize($color-townies, 0.65) 0%,
