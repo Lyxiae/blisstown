@@ -92,6 +92,12 @@ $forum-content-size: 435px;
       }
     }
 
+    #c4 & {
+      &::before {
+        content: "Lose your way";
+      }
+    }
+
     #c2 &,
     #f25 &,
     #f23 & {
