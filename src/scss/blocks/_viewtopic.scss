@@ -55,24 +55,26 @@
     @include breakpoint(768px) {
       padding-left: 320px;
     }
-
+    .post-bliss & {
+      background-image: url("../../assets/viewtopic/jupiter-bg.png");
+    }
     .post-townies & {
       background-image: url("../../assets/viewtopic/townie-bg.png");
     }
     .post-hellhounds & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/hellhounds-bg.png");
     }
     .post-cercle & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/cercle-bg.png");
     }
     .post-llorona & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/llorona-bg.png");
     }
     .post-jupiter & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/jupiter-bg.png");
     }
     .post-exiles & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/exiles-bg.png");
     }
   }
 
@@ -150,6 +152,12 @@
       &::before {
         background-image: $gradient-townies;
         border-radius: 50%;
+      }
+    }
+    .post-bliss & {
+      &::before {
+        background: $gradient-secondary-horizontal;
+        opacity: 0.6;
       }
     }
     .post-hellhounds & {
@@ -232,25 +240,7 @@
         display: flex;
       }
 
-      .post-townies & {
-        color: $color-townies;
-      }
-
-      .post-hellhounds & {
-        color: $color-hellhounds;
-      }
-      .post-cercle & {
-        color: $color-cercle;
-      }
-      .post-llorona & {
-        color: $color-llorona;
-      }
-      .post-jupiter & {
-        color: $color-jupiter;
-      }
-      .post-exiles & {
-        color: $color-exiles;
-      }
+      @include colorAsPostGroupClass();
 
       &__label {
         display: none;

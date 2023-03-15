@@ -27,19 +27,22 @@
       background-image: url("../../assets/viewtopic/townie-bg.png");
     }
     .hellhounds & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/hellhounds-bg.png");
     }
     .cercle & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/cercle-bg.png");
     }
     .llorona & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/llorona-bg.png");
     }
     .jupiter & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/jupiter-bg.png");
+    }
+    .bliss & {
+      background-image: url("../../assets/viewtopic/jupiter-bg.png");
     }
     .exiles & {
-      background-image: url("../../assets/viewtopic/townie-bg.png");
+      background-image: url("../../assets/viewtopic/exiles-bg.png");
     }
   }
 
@@ -54,6 +57,7 @@
     padding: 2px 15px;
     border-radius: 6px;
     background: rgba(0, 0, 0, 0.75);
+    width: fit-content;
 
     @include breakpoint(1100px) {
       font-size: 36px;
@@ -114,6 +118,12 @@
       &::before {
         background-image: $gradient-townies;
         border-radius: 50%;
+      }
+    }
+    .bliss & {
+      &::before {
+        background-image: $gradient-secondary-horizontal;
+        opacity: 0.6;
       }
     }
     .hellhounds & {
@@ -199,7 +209,7 @@
     gap: 0.5rem;
   }
   &__main {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.5);
     padding-bottom: 2rem;
   }
 

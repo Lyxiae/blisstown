@@ -368,79 +368,79 @@ $forum-content-size: 435px;
       display: none;
     }
 
-    #Megasquare & {
+    .forum[data-location="Megasquare"] & {
       background-image: url("../../assets/categories/megasquare.jpg");
     }
-    #Centre\ commercial & {
+    .forum[data-location="Centre commercial"] & {
       background-image: url("../../assets/categories/megasquare.jpg");
     }
-    #Hyperion & {
+    .forum[data-location="Hyperion"] & {
       background-image: url("../../assets/categories/megasquare.jpg");
     }
-    #Starcadia & {
+    .forum[data-location="Starcadia"] & {
       background-image: url("../../assets/categories/megasquare.jpg");
     }
-    #Museum & {
+    .forum[data-location="Museum"] & {
       background-image: url("../../assets/categories/musem.jpg");
     }
-    #Unversité\ Minerva & {
+    .forum[data-location="Université Minerva"] & {
       background-image: url("../../assets/categories/universite-minerva.jpg");
     }
-    #Providence\ Park & {
+    .forum[data-location="Providence Park"] & {
       background-image: url("../../assets/categories/providence-park.jpg");
     }
-    #Fiddler\'s\ Green & {
+    .forum[data-location="Fiddler's Green"] & {
       background-image: url("../../assets/categories/fiddlers-green.jpg");
     }
-    #Hyperloop & {
+    .forum[data-location="Hyperloop"] & {
       background-image: url("../../assets/categories/hyperloop.jpg");
     }
-    #Eleanor\'s\ Carcass & {
+    .forum[data-location="Eleanor's Carcass"] & {
       background-image: url("../../assets/categories/eleanors-carcass.jpg");
     }
-    #Peter\'s\ Motors & {
+    .forum[data-location="Peter's Motors"] & {
       background-image: url("../../assets/categories/peters-motors.jpg");
     }
-    #Le\  & {
+    .forum[data-location="On the Run"] & {
       background-image: url("../../assets/categories/on-the-run.jpg");
     }
-    #Boulder\ Town & {
+    .forum[data-location="Boulder Town"] & {
       background-image: url("../../assets/categories/boulder-town.jpg");
     }
-    #Walmart & {
+    .forum[data-location="Walmart"] & {
       background-image: url("../../assets/categories/walmart.jpg");
     }
-    #Siliconica & {
+    .forum[data-location="Siliconica"] & {
       background-image: url("../../assets/categories/siliconica.jpg");
     }
-    #Mimi\'s & {
+    .forum[data-location="Mimi's"] & {
       background-image: url("../../assets/categories/mimis.jpg");
     }
-    #Peach & {
+    .forum[data-location="Peach"] & {
       background-image: url("../../assets/categories/peach.jpg");
     }
-    #Whiskers\ Tea & {
+    .forum[data-location="Whiskers Tea"] & {
       background-image: url("../../assets/categories/whiskers-tea.jpg");
     }
-    #Profondeurs & {
+    .forum[data-location="Profondeurs"] & {
       background-image: url("../../assets/categories/profondeurs.jpg");
     }
-    #Campement\ Intermédiaire & {
+    .forum[data-location="Campement intermédiaire"] & {
       background-image: url("../../assets/categories/campement-inter.jpg");
     }
-    #Stone\ Belt & {
+    .forum[data-location="Stone Belt"] & {
       background-image: url("../../assets/categories/stone-belt.jpg");
     }
-    #Décharge & {
+    .forum[data-location="Décharge"] & {
       background-image: url("../../assets/categories/decharge.jpg");
     }
-    #Village\ exilé & {
+    .forum[data-location="Village exilé"] & {
       background-image: url("../../assets/categories/village-exile.jpg");
     }
-    #Nevada\'s\ Hell & {
+    .forum[data-location="Nevada's Hell"] & {
       background-image: url("../../assets/categories/nevadas-hell.jpg");
     }
-    #Le\ Ranch & {
+    .forum[data-location="Le Ranch"] & {
       background-image: url("../../assets/categories/ranch.jpg");
     }
   }
