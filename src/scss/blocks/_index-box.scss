@@ -475,6 +475,11 @@ $forum-content-size: 435px;
       justify-content: center;
     }
 
+    #c2 & {
+      padding: 2rem 0;
+      justify-content: flex-start;
+    }
+
     #personnages & {
       display: flex;
       flex-direction: column;
