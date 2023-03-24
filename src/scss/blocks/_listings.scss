@@ -172,6 +172,14 @@
     overflow: hidden;
     color: white;
     background: $color-bunker;
+    opacity: 1;
+    display: block;
+    transition: display 0s, opacity 0.3s linear;
+    &.hidden {
+      display: none;
+      opacity: 0;
+      transition: display 0s 0.3s, opacity 0.3s linear;
+    }
   }
 
   &__master-head {
@@ -189,8 +197,6 @@
     align-items: center;
 
     @include bgColorAsGroupClassSameLvl();
-
-
   }
 
   &__user-icon {
@@ -222,6 +228,7 @@
     color: $color-secondary;
     font-weight: bold;
     text-transform: uppercase;
+    @include colorAsGroupClass();
   }
 
   &__info {
@@ -250,8 +257,10 @@
     font-weight: bold;
     color: $color-primary;
     text-transform: uppercase;
+    @include colorAsGroupClass();
     &:hover {
       color: white;
+      outline: 2px solid rgba(255,255,255,0.1);
     }
   }
 
@@ -264,10 +273,65 @@
     border-top: 2px solid $color-secondary;
     border-radius: 50%;
     animation: rotate-center 0.6s linear infinite both;
-    
 
     &.active {
       display: block;
+    }
+  }
+
+  &__subtabs {
+    padding: 0 1rem 1rem;
+    display: none;
+    gap: 5px;
+    justify-content: center;
+    padding: 0 1rem 1.5rem;
+    position: relative;
+    isolation: isolate;
+    @include breakpoint(768px) {
+      display: flex;
+    }
+
+    &::before {
+      content: "Filtrer les personnages";
+      font-size: 40px;
+      font-style: italic;
+      font-weight: 700;
+      left: -1.5rem;
+      opacity: 0.1;
+      position: absolute;
+      text-transform: uppercase;
+      top: -0.5rem;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      z-index: -1;
+    }
+  }
+
+  &__masterlist {
+    position: relative;
+    height: 100%;
+    padding: 1rem;
+  }
+
+  &__filter-button {
+    color: black;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s;
+    font-weight: 600;
+    cursor: pointer;
+    @include bgColorAsGroupClassSameLvl();
+
+    &:hover {
+      filter: brightness(1.4);
+    }
+
+    &--all {
+      background-color: $color-secondary;
+    }
+    &.active {
+      filter: brightness(1.4);
     }
   }
 }
@@ -275,10 +339,16 @@
 @keyframes rotate-center {
   0% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
+}
+
+#listing-master {
+  height: calc(100% - 3.5rem);
+  overflow: auto;
+  padding: 0 1rem;
 }

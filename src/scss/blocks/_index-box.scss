@@ -705,6 +705,7 @@ $forum-content-size: 435px;
 
   &__description-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
   }
 
