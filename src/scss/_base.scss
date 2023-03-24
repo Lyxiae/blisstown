@@ -340,7 +340,6 @@ a.gensmall {
   }
 }
 
-
 .paragraph {
   font-size: 14px;
   a {
@@ -348,5 +347,19 @@ a.gensmall {
     &:hover {
       color: white;
     }
+  }
+}
+
+#switcheroo {
+  display: none !important;
+  @include breakpoint(1024px) {
+    display: block;
+  }
+}
+
+#switcheroo-mobile {
+  display: block;
+  @include breakpoint(1024px) {
+    display: none;
   }
 }
