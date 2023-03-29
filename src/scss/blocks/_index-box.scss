@@ -446,6 +446,9 @@ $forum-content-size: 435px;
     .forum[data-location="Whiskers Tea"] & {
       background-image: url("../../assets/categories/whiskers-tea.jpg");
     }
+    .forum[data-location="La Casa"] & {
+      background-image: url("../../assets/categories/casa.png");
+    }
     .forum[data-location="Profondeurs"] & {
       background-image: url("../../assets/categories/profondeurs.jpg");
     }
