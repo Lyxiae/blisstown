@@ -384,16 +384,28 @@ $forum-content-size: 435px;
       background-image: url("../../assets/categories/megasquare.jpg");
     }
     .forum[data-location="Centre commercial"] & {
-      background-image: url("../../assets/categories/megasquare.jpg");
+      background-image: url("../../assets/categories/centre-co.jpg");
     }
     .forum[data-location="Hyperion"] & {
       background-image: url("../../assets/categories/megasquare.jpg");
     }
     .forum[data-location="Starcadia"] & {
-      background-image: url("../../assets/categories/megasquare.jpg");
+      background-image: url("../../assets/categories/starcadia.jpg");
     }
     .forum[data-location="Museum"] & {
       background-image: url("../../assets/categories/musem.jpg");
+    }
+    .forum[data-location="Mont de Jupiter"] & {
+      background-image: url("../../assets/categories/cityhall.jpg");
+    }
+    .forum[data-location="Verger de Proserpine"] & {
+      background-image: url("../../assets/categories/greenhouse.jpg");
+    }
+    .forum[data-location="Hôpital du Caducée"] & {
+      background-image: url("../../assets/categories/hospital.jpg");
+    }
+    .forum[data-location="Champs de Ceres"] & {
+      background-image: url("../../assets/categories/ceres-champ.jpg");
     }
     .forum[data-location="Université Minerva"] & {
       background-image: url("../../assets/categories/universite-minerva.jpg");
