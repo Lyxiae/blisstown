@@ -371,3 +371,17 @@ a.gensmall {
     }
   }
 }
+
+.tooltip {
+  display: none;
+  position: absolute;
+  border: 1px solid #0d2b37;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 3px 5px;
+  color: #ccc;
+  font-size: 10px;
+  font-family: Raleway, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  z-index: 999;
+}
