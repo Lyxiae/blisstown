@@ -114,6 +114,12 @@
         background-repeat: no-repeat;
       }
     }
+    &--masterlist {
+      padding: 1rem;
+      @include breakpoint(1024px) {
+        padding: 2rem;
+      }
+    }
 
     &.loaded {
       display: block;
@@ -165,7 +171,8 @@
   }
 
   &__master-item {
-    width: 100%;
+    width: 290px;
+    margin: 5px;
     height: 335px;
     position: relative;
     border-radius: 6px;
@@ -310,7 +317,7 @@
   &__masterlist {
     position: relative;
     height: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   &__filter-button {
@@ -350,5 +357,5 @@
 #listing-master {
   height: calc(100% - 3.5rem);
   overflow: auto;
-  padding: 0 1rem;
+  padding: 0;
 }

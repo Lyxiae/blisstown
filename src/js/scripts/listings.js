@@ -37,12 +37,12 @@ class Listings {
         buttons.forEach((button) => {
           button.addEventListener('click', this.toggleListings(button));
         });
-        filterButtons.forEach((button) => {
-          button.addEventListener(
-            'click',
-            this.filterGroup(button, filterButtons)
-          );
-        });
+        // filterButtons.forEach((button) => {
+        //   button.addEventListener(
+        //     'click',
+        //     this.filterGroup(button, filterButtons)
+        //   );
+        // });
       }
     }
   }
@@ -124,7 +124,7 @@ class Listings {
 
     // Create avatar listing block that will contain generated list
     let masterListing = document.createElement('div');
-    masterListing.classList.add('listings__list');
+    masterListing.classList.add('listings__master-list-list');
 
     charactersList.forEach((character) => {
       let characterBlock = document.createRange().createContextualFragment(`

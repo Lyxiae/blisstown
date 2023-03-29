@@ -172,6 +172,14 @@
         display: none;
       }
 
+      &[href="/forum"],
+      &[href="/"] {
+        display: none;
+        @include breakpoint(1024px) {
+          display: flex;
+        }
+      }
+
       .toread-message {
         width: 16px;
         height: 16px;
@@ -270,9 +278,10 @@
   left: -100vw;
   transition: 0.3s;
   z-index: 100;
-  padding: 4rem 1rem 1rem;
+  padding: 5rem 1rem 1rem;
   background-color: black;
   pointer-events: none;
+  overflow: auto;
   &.active {
     left: 0;
     pointer-events: all;

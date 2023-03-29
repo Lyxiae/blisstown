@@ -357,10 +357,17 @@
   &__jump-block,
   &__jumpbox {
     display: flex;
-    align-items: center;
     gap: 0.5rem;
     font-family: $font-sans-title;
     text-transform: uppercase;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    align-items: flex-start;
+    @include breakpoint(768px) {
+      flex-direction: row;
+      align-items: center;
+    }
 
     .h3 {
       font-size: 12px;

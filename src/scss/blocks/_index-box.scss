@@ -27,7 +27,8 @@ $forum-content-size: 435px;
       }
     }
 
-    #f25 &, #f23 & {
+    #f25 &,
+    #f23 & {
       &::before {
         height: 100%;
       }
@@ -260,6 +261,10 @@ $forum-content-size: 435px;
         padding-right: 10px;
         padding-left: 25px;
       }
+      &::before {
+        right: -0.25rem;
+        left: unset;
+      }
     }
     #{$block-selector}__main-infos {
       right: unset;
@@ -284,7 +289,6 @@ $forum-content-size: 435px;
           left: 10px;
         }
       }
-      
     }
     #{$block-selector}__subforums {
       padding-right: 1rem;
@@ -349,14 +353,16 @@ $forum-content-size: 435px;
     background-image: url("../../assets/categories/bliss-heights.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
-    width: calc(100vw - 50px - $forum-content-size);
-    height: 100%;
-    right: 0;
-    top: 0;
-    display: none;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 1rem;
     @include breakpoint(900px) {
       display: block;
+      position: absolute;
+      width: calc(100vw - 50px - $forum-content-size);
+      height: 100%;
+      right: 0;
+      top: 0;
     }
 
     @include breakpoint(1400px) {
@@ -540,9 +546,25 @@ $forum-content-size: 435px;
       justify-content: space-between;
     }
   }
+  &__title-text {
+    position: relative;
+    .forum[data-type="Nouveaux messages"] & {
+      &::before {
+        @extend %icon;
+        @extend %icon--questionmark;
+        left: -1rem;
+        top: -1rem;
+        font-size: 30px;
+        opacity: 0.5;
+        position: absolute;
+        isolation: isolate;
+        z-index: -1;
+        color: $color-primary;
+      }
+    }
+  }
 
   &__title {
-    height: 175px;
     width: 100%;
     text-align: left;
     font-size: 34px;
@@ -552,12 +574,15 @@ $forum-content-size: 435px;
     align-items: flex-end;
     line-height: 1;
     transition: filter 0.3s;
-
+    margin-bottom: 1rem;
+    position: relative;
+    isolation: isolate;
     &:hover {
       filter: brightness(1.2);
     }
 
     @include breakpoint(900px) {
+      height: 165px;
       padding-right: 25px;
       font-size: 46px;
       margin-bottom: 5px;
@@ -571,6 +596,8 @@ $forum-content-size: 435px;
     &--secondary {
       color: $color-secondary;
     }
+
+    
 
     #c2 &,
     #c1 &,
@@ -615,6 +642,7 @@ $forum-content-size: 435px;
         color: $color-secondary !important;
         border-color: $color-secondary !important;
       }
+      
     }
 
     #personnages & {
@@ -691,7 +719,7 @@ $forum-content-size: 435px;
   }
 
   &__subdescription {
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(3px);
     padding: 20px;
     font-size: 14px;
@@ -882,7 +910,7 @@ $forum-content-size: 435px;
       align-items: center;
       justify-content: center;
       gap: 0.2rem;
-      background-color: rgba(0,0,0,0.75);
+      background-color: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(3px);
       text-transform: uppercase;
       text-align: center;
@@ -1192,8 +1220,6 @@ $forum-content-size: 435px;
     @include breakpoint($breakpoint-l) {
       font-size: 62px;
     }
-
-    
   }
 
   &__intro {
@@ -1234,7 +1260,7 @@ $forum-content-size: 435px;
   }
 
   &__accepted-block {
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(3px);
     border-radius: 6px;
     width: 100%;
