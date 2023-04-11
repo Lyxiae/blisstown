@@ -311,6 +311,30 @@ input {
   }
 }
 
+.viewtopic__post-body,
+.encyclopedie__tab-content {
+  ul {
+    list-style: none;
+    li {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 15px;
+      margin: 5px 0;
+      position: relative;
+      border-radius: 6px;
+      &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        top: 18px;
+        left: -20px;
+        border-radius: 50%;
+        background-color: $color-primary;
+        position: absolute;
+      }
+    }
+  }
+}
+
 .page-title {
   @extend %title;
   @extend %title--m;
@@ -384,4 +408,67 @@ a.gensmall {
   text-transform: uppercase;
   font-weight: 700;
   z-index: 999;
+}
+
+.registerpage {
+  @extend %main-container;
+}
+
+.registerpage form {
+  background-image: url("../../assets/chara-register.png");
+  background-repeat: no-repeat;
+  background-position: right -40px bottom;
+  background-color: black;
+  .panel {
+    background: transparent;
+  }
+  overflow: hidden;
+  fieldset:not(.fields2) {
+    dl:first-of-type {
+      display: none;
+    }
+    dl:last-of-type dd {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  }
+}
+
+.corners-bottom {
+  display: none;
+}
+
+form[name="form_login"] {
+  .fld_connexion {
+    label[for="autologin"] {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  }
+  .social_btn {
+    display: none;
+  }
+}
+
+form[data-form-type="login"] ~ .panel {
+  padding-top: 0;
+
+  .h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $color-secondary;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .hr {
+    display: none;
+  }
 }

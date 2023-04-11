@@ -132,6 +132,7 @@
     text-transform: uppercase;
     position: relative;
     background: rgba(0, 0, 0, 0.5);
+    align-self: center;
     &--positive {
       color: $color-llorona;
     }

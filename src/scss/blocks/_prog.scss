@@ -34,7 +34,7 @@
     #{$this}__entry:last-of-type & {
       &::after {
         content: '';
-        background: linear-gradient(0deg, rgba($color-baltic-sea,1) 20%, rgba($color-baltic-sea, 0) 100%);
+        background: linear-gradient(0deg, #040304 20%, rgba($color-baltic-sea, 0) 100%);
         position: absolute;
         bottom: 0;
         left: 0;

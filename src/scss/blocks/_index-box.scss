@@ -163,10 +163,12 @@ $forum-content-size: 435px;
       @extend %main-container;
       position: relative;
       display: grid;
-      grid-gap: 2rem;
+      gap: 0.5rem;
+      padding: 1rem;
 
       @include breakpoint(768px) {
         grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
       }
     }
 
@@ -310,7 +312,16 @@ $forum-content-size: 435px;
   }
 
   #f23 & {
-    height: 350px;
+    @include breakpoint(768px) {
+      height: 310px;
+    }
+  }
+
+  #f25 & {
+    height: auto;
+    @include breakpoint(1100px) {
+      height: 440px;
+    }
   }
 
   &#personnages {
@@ -530,6 +541,11 @@ $forum-content-size: 435px;
       width: 100%;
     }
 
+    #f25 &, #f23 & {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
     #c1 & {
       height: auto;
       display: flex;
@@ -697,6 +713,12 @@ $forum-content-size: 435px;
       padding: 0;
       @include breakpoint(768px) {
         height: 70px;
+      }
+    }
+
+    #f23 & {
+      @include breakpoint(768px) {
+        height: 46px;
       }
     }
     #c1 & {
@@ -1398,4 +1420,8 @@ $forum-content-size: 435px;
     margin-top: 10px;
     margin-left: 1rem;
   }
+}
+
+#f1.category {
+  display: none;
 }

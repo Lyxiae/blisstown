@@ -115,7 +115,7 @@ class Listings {
           biographie: user['Biographie'],
           fiche: user['Fiche de présentation'],
           bliss: user['Bliss'],
-          carnet: user['Carnet'],
+          carnet: user['Carnet de bord'],
           reseaux: user['Réseaux'],
           icon: user['Icon'],
         });

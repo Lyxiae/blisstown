@@ -64,6 +64,7 @@
   }
 
   &__nickname {
+    height: 31px;
     padding: 4px 10px;
     font-size: 14px;
     text-transform: uppercase;
@@ -252,8 +253,9 @@
     }
 
     .f-pres__field--resume & {
-      max-height: 200px;
+      min-height: 100px;
       overflow: auto;
+      max-height: 250px;
     }
 
     .fiche__field--reputation & {

@@ -188,6 +188,10 @@
   &__news-content {
     font-size: 14px;
     text-align: justify;
+     a {
+      font-weight: 600;
+      color: $color-secondary;
+     }
   }
 
   &__main {

@@ -311,27 +311,7 @@
     padding: 2rem;
     color: #ddd;
 
-    ul {
-      list-style: none;
-      li {
-        background: rgba(255,255,255,0.05);
-        padding: 10px 15px;
-        margin: 5px 0;
-        position: relative;
-        border-radius: 6px;
-        &::before {
-          content: '';
-          width: 8px;
-          height: 8px;
-          top: 18px;
-          left: -20px;
-          border-radius: 50%;
-          background-color: $color-primary;
-          position: absolute;
-          
-        }
-      }
-    }
+    
   }
 
   &__separator {
