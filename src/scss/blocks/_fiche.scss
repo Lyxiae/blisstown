@@ -258,6 +258,7 @@
 
     .fiche__field--reputation & {
       border: 1px solid $color-bunker;
+      height: -webkit-fill-available;
 
       .icon--chatbox {
         position: absolute;
