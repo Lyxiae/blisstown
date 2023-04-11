@@ -222,7 +222,7 @@
   display: block;
 }
 #fa_toolbar #fa_right #notif_list li .contentText {
-  width: 27em;
+  width: 25em;
   height: auto !important;
   overflow: hidden;
 }
@@ -338,7 +338,7 @@
   &--out {
     right: 16px;
   }
-  
+
   &::before {
     @extend %icon;
     opacity: 0.25;
