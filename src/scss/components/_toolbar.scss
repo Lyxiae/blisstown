@@ -220,6 +220,10 @@
   color: $color-white;
   line-height: 1.5;
   display: block;
+
+  hr {
+    display: none;
+  }
 }
 #fa_toolbar #fa_right #notif_list li .contentText {
   width: 25em;
