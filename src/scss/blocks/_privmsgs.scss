@@ -6,6 +6,23 @@
     @extend %main-container;
   }
 
+  &__head-fieldset {
+    background-color: black;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__add-names {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    .inputbox {
+      width: 100% !important;
+    }
+    #add_username {
+      margin-top: 1rem;
+    }
+  }
   &__head {
     display: flex;
     flex-direction: column;
@@ -181,7 +198,8 @@
     &__icons {
       display: flex;
       list-style: none;
-      padding: 0;
+      padding: 0.5rem 0;
+      margin: 0;
       gap: 0.75rem;
 
        a {

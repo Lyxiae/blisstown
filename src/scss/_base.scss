@@ -472,3 +472,24 @@ form[data-form-type="login"] ~ .panel {
     display: none;
   }
 }
+
+.jqmWindow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.jqmOverlay {
+  background: black;
+}
+
+.inputbox[name="search_username"] {
+  margin-bottom: 0.5rem;
+}
+
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

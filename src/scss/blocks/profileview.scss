@@ -297,6 +297,10 @@
         color: white;
       }
     }
+
+    &[title="Email"] {
+      display: none;
+    }
   }
 
   &__field {
@@ -579,4 +583,6 @@
   .ajax-profil_edit {
     display: none;
   }
+
+  
 }
